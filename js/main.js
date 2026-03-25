@@ -69,46 +69,61 @@
     var lines = toggleBtn.querySelectorAll('.hamburger-line');
 
     toggleBtn.addEventListener('click', function () {
-        menu.classList.toggle('open');
-
-        if (menu.classList.contains('open')) {
-            lines[0].style.marginTop = '0';
-            lines[1].style.marginTop = '0';
-            lines[2].style.marginTop = '0';
-            lines[0].style.transform = 'translateY(1px) rotate(45deg)';
-            lines[1].style.opacity = '0';
-            lines[2].style.transform = 'translateY(-1px) rotate(-45deg)';
-        } else {
-            lines[0].style.marginTop = '';
-            lines[1].style.marginTop = '';
-            lines[2].style.marginTop = '';
-            lines[0].style.transform = '';
-            lines[1].style.opacity = '1';
-            lines[2].style.transform = '';
-        }
+        var isOpen = menu.classList.toggle('open');
+        toggleBtn.classList.toggle('open', isOpen);
+        document.body.classList.toggle('overflow-hidden', isOpen);
     });
 
     // Close mobile menu on link click
     document.querySelectorAll('.mobile-link').forEach(function (link) {
         link.addEventListener('click', function () {
-            menu.classList.remove('open');
-            lines[0].style.marginTop = '';
-            lines[1].style.marginTop = '';
-            lines[2].style.marginTop = '';
-            lines[0].style.transform = '';
-            lines[1].style.opacity = '1';
-            lines[2].style.transform = '';
+            closeMenu();
         });
     });
 
+    // Close on backdrop click
+    menu.addEventListener('click', function (e) {
+        if (e.target === menu) {
+            closeMenu();
+        }
+    });
+
+    function closeMenu() {
+        menu.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        document.body.classList.remove('overflow-hidden');
+    }
+
 
     // =============================================
-    // Header Shadow on Scroll
+    // Header Scroll Animation (Hide on Scroll Down, Show on Scroll Up)
     // =============================================
     var header = document.getElementById('site-header');
+    var lastScrollY = window.scrollY;
+    var scrollThreshold = 100; // Small threshold to avoid micro-scroll triggers
 
     window.addEventListener('scroll', function () {
-        header.classList.toggle('shadow-md', window.scrollY > 10);
+        var currentScrollY = window.scrollY;
+        var mobileMenuOpen = document.getElementById('mobile-menu').classList.contains('open');
+
+        // Add shadow
+        header.classList.toggle('shadow-md', currentScrollY > 10);
+
+        // Hide/Show logic
+        if (!mobileMenuOpen) {
+            if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
+                // Scrolling Down
+                header.classList.add('nav-hidden');
+            } else if (currentScrollY < lastScrollY) {
+                // Scrolling Up
+                header.classList.remove('nav-hidden');
+            }
+        } else {
+            // Always show header if mobile menu is open
+            header.classList.remove('nav-hidden');
+        }
+
+        lastScrollY = Math.max(0, currentScrollY);
     }, { passive: true });
 
 
@@ -123,14 +138,14 @@
                     fadeObs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.05 });
 
-        document.querySelectorAll('.fade-in-up').forEach(function (el) {
+        document.querySelectorAll('[class*="reveal-"]').forEach(function (el) {
             fadeObs.observe(el);
         });
     } else {
         // Fallback for older browsers
-        document.querySelectorAll('.fade-in-up').forEach(function (el) {
+        document.querySelectorAll('[class*="reveal-"]').forEach(function (el) {
             el.classList.add('visible');
         });
     }

@@ -50,10 +50,13 @@
     <header id="site-header"
         class="fixed top-0 left-0 right-0 z-[9999] bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-shadow duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <a href="#" class="flex items-center gap-2 select-none">
-                    <img src="assets/LogoFinal.svg" alt="SitioHoy Logo" class="logo-img w-10 h-10 sm:w-12 sm:h-12 object-contain">
+                <a href="#" class="flex items-center gap-3 select-none">
+                    <div class="logo-wrapper">
+                        <img src="assets/LogoFinal.svg" alt="SitioHoy Logo"
+                            class="logo-img w-14 h-14 sm:w-16 sm:h-16 object-contain">
+                    </div>
                     <span class="hidden sm:inline text-2xl font-extrabold tracking-tight">
                         <span class="text-brand-dark dark:text-white">Sitio</span><span
                             class="text-brand-accent">Hoy</span>
@@ -61,7 +64,7 @@
                 </a>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-600 dark:text-gray-400">
                     <a href="#hero" class="hover:text-brand-dark dark:hover:text-white transition-colors">Inicio</a>
                     <a href="#problema" class="hover:text-brand-dark dark:hover:text-white transition-colors">Por
                         qué</a>
@@ -85,7 +88,7 @@
                         </svg>
                     </button>
                     <a id="header-cta" href="#"
-                        class="wa-link ml-2 inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm">
+                        class="wa-link ml-2 inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-6 py-3 rounded-full text-sm font-semibold transition-colors shadow-sm">
                         Quiero mi web
                     </a>
                 </nav>
@@ -107,14 +110,11 @@
                         </svg>
                     </button>
                     <button id="menu-toggle"
-                        class="relative z-[60] flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors overflow-visible"
+                        class="relative z-[60] flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors overflow-visible gap-1.5"
                         aria-label="Abrir menú">
-                        <span
-                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white transition-all duration-300"></span>
-                        <span
-                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white mt-1.5 transition-all duration-300"></span>
-                        <span
-                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white mt-1.5 transition-all duration-300"></span>
+                        <span class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white rounded-full transition-all duration-300"></span>
+                        <span class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white rounded-full transition-all duration-300"></span>
+                        <span class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white rounded-full transition-all duration-300"></span>
                     </button>
                 </div>
             </div>
@@ -124,17 +124,64 @@
 
     <!-- Mobile Menu (Fullscreen Overlay — outside header to avoid backdrop-filter clipping) -->
     <div id="mobile-menu"
-        class="fixed inset-0 z-[9998] bg-white dark:bg-gray-950 flex flex-col items-center justify-center md:hidden">
-        <nav class="flex flex-col items-center gap-8 text-lg font-semibold text-gray-700 dark:text-gray-300">
-            <a href="#hero" class="mobile-link hover:text-brand-accent transition-colors">Inicio</a>
-            <a href="#problema" class="mobile-link hover:text-brand-accent transition-colors">Por qué</a>
-            <a href="#como-funciona" class="mobile-link hover:text-brand-accent transition-colors">Cómo funciona</a>
-            <a href="#precio" class="mobile-link hover:text-brand-accent transition-colors">Precio</a>
-            <a href="#faq" class="mobile-link hover:text-brand-accent transition-colors">FAQ</a>
-            <a id="mobile-cta" href="#"
-                class="wa-link inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-3.5 rounded-full text-base font-bold transition-colors shadow-lg mt-4">
-                Quiero mi web
-            </a>
+        class="fixed inset-0 z-[9998] bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl md:hidden overflow-hidden">
+        <!-- Background Blobs for Modern UI -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-dark/5 dark:bg-brand-accent/5 rounded-full blur-3xl animate-pulse"
+            style="animation-delay: 1s;"></div>
+
+        <nav class="relative h-full w-full flex flex-col px-8 py-12">
+            <!-- Menu Top: Logo -->
+            <div class="flex items-center justify-between mb-16 opacity-0 translate-y-4 transition-all duration-500 delay-100"
+                style="transition-property: opacity, transform;">
+                <div class="flex items-center gap-3">
+
+                </div>
+            </div>
+
+            <!-- Menu Body: Links (Staggered) -->
+            <div class="flex flex-col gap-6 text-3xl font-bold tracking-tight mb-auto">
+                <a href="#hero" class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 1">Inicio</a>
+                <a href="#problema"
+                    class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 2">Por qué</a>
+                <a href="#como-funciona"
+                    class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 3">Cómo funciona</a>
+                <a href="#precio"
+                    class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 4">Precio</a>
+                <a href="#faq" class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 5">FAQ</a>
+
+                <a id="mobile-cta" href="#"
+                    class="wa-link mt-6 inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-brand-accent/20"
+                    style="--i: 6">
+                    Quiero mi web
+                </a>
+            </div>
+
+            <!-- Menu Bottom: Social & Tagline -->
+            <div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-4 opacity-0 translate-y-4 transition-all duration-500 delay-700"
+                style="transition-property: opacity, transform;">
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/" target="_blank"
+                        class="text-gray-400 hover:text-brand-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="wa-link text-gray-400 hover:text-brand-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm text-gray-500 font-medium tracking-wide">SitioHoy &copy; 2026. Impulsamos tu presencia
+                    digital.</p>
+            </div>
         </nav>
     </div>
 
@@ -149,7 +196,7 @@
         </div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div class="fade-in-up">
+                <div class="reveal-left">
                     <h1
                         class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-brand-dark dark:text-white">
                         Tu negocio online hoy.<br class="hidden sm:block">
@@ -181,7 +228,7 @@
                         Sin compromiso · Cancelá cuando quieras · Respondemos en minutos
                     </p>
                 </div>
-                <div class="fade-in-up flex justify-center phone-mobile-scale">
+                <div class="reveal-scale flex justify-center phone-mobile-scale">
                     <!-- CSS Phone Frame + Carousel -->
                     <div class="phone-frame">
                         <div class="phone-notch"></div>
@@ -217,7 +264,7 @@
     <!-- ========== PROBLEMA vs SOLUCIÓN ========== -->
     <section id="problema" class="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">¿Tu negocio solo existe en
                     redes?</h2>
                 <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Esto es lo que pasa cuando no tenés
@@ -226,7 +273,7 @@
             <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                 <!-- Problema -->
                 <div
-                    class="fade-in-up bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-left bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gray-300 dark:bg-gray-600 rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span
@@ -263,7 +310,7 @@
                 </div>
                 <!-- Solución -->
                 <div
-                    class="fade-in-up bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-right bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-brand-accent rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="flex items-center justify-center w-10 h-10 bg-brand-accent/15 rounded-full">
@@ -295,7 +342,7 @@
                 </div>
             </div>
             <!-- CTA Intermedio -->
-            <div class="text-center mt-10 fade-in-up">
+            <div class="text-center mt-10 reveal-up">
                 <a href="#"
                     class="wa-link inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-colors shadow-md hover:shadow-lg">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -312,7 +359,7 @@
     <!-- ========== WEB TRADICIONAL vs SITIOHOY ========== -->
     <section class="py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">¿Cuánto cuesta una web
                     normalmente?</h2>
                 <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Spoiler: con nosotros, mucho menos.
@@ -321,7 +368,7 @@
             <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                 <!-- Tradicional -->
                 <div
-                    class="fade-in-up bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-left bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gray-300 dark:bg-gray-600 rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span
@@ -359,7 +406,7 @@
                 </div>
                 <!-- SitioHoy -->
                 <div
-                    class="fade-in-up bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-right bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-brand-accent rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="flex items-center justify-center w-10 h-10 bg-brand-accent/15 rounded-full">
@@ -391,7 +438,7 @@
                 </div>
             </div>
             <!-- CTA -->
-            <div class="text-center mt-10 fade-in-up">
+            <div class="text-center mt-10 reveal-up">
                 <a href="#"
                     class="wa-link cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-colors shadow-md hover:shadow-lg">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -413,14 +460,14 @@
         <div class="floating-blob floating-blob-1" aria-hidden="true"></div>
         <div class="floating-blob floating-blob-2" aria-hidden="true"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 fade-in-up">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Empezá en 3 pasos</h2>
                 <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Tan fácil que no lo vas a creer.</p>
             </div>
-            <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid sm:grid-cols-3 gap-6 md:gap-8 reveal-stagger">
                 <!-- Paso 1 -->
                 <div
-                    class="fade-in-up group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                    class="reveal-item group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                     <div
                         class="mx-auto w-16 h-16 flex items-center justify-center bg-brand-accent/10 rounded-2xl mb-5 group-hover:bg-brand-accent/20 transition-colors">
                         <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -438,7 +485,7 @@
                 </div>
                 <!-- Paso 2 -->
                 <div
-                    class="fade-in-up group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                    class="reveal-item group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                     <div
                         class="mx-auto w-16 h-16 flex items-center justify-center bg-brand-accent/10 rounded-2xl mb-5 group-hover:bg-brand-accent/20 transition-colors">
                         <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -456,7 +503,7 @@
                 </div>
                 <!-- Paso 3 -->
                 <div
-                    class="fade-in-up group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                    class="reveal-item group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                     <div
                         class="mx-auto w-16 h-16 flex items-center justify-center bg-brand-accent/10 rounded-2xl mb-5 group-hover:bg-brand-accent/20 transition-colors">
                         <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -474,7 +521,7 @@
                 </div>
             </div>
             <!-- CTA después de los 3 pasos -->
-            <div class="text-center mt-12 fade-in-up">
+            <div class="text-center mt-12 reveal-up">
                 <a href="#"
                     class="wa-link cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -492,7 +539,7 @@
     <!-- ========== SOCIAL PROOF ========== -->
     <section class="py-12 md:py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-3 gap-6 text-center fade-in-up">
+            <div class="grid grid-cols-3 gap-6 text-center reveal-up">
                 <div>
                     <span class="counter block text-3xl sm:text-4xl font-extrabold text-brand-accent"
                         data-target="50">0</span>
@@ -522,12 +569,12 @@
     <!-- ========== PRICING ========== -->
     <section id="precio" class="py-16 md:py-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Precio transparente</h2>
                 <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Sin letra chica, sin sorpresas. Un
                     solo plan con todo incluido.</p>
             </div>
-            <div class="max-w-md mx-auto fade-in-up">
+            <div class="max-w-md mx-auto reveal-scale">
                 <div
                     class="relative bg-gradient-to-br from-brand-dark to-slate-800 rounded-3xl p-8 sm:p-10 text-white shadow-2xl overflow-hidden">
                     <div
@@ -599,11 +646,11 @@
     <!-- ========== FAQ ========== -->
     <section id="faq" class="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Preguntas frecuentes</h2>
                 <p class="mt-3 text-gray-500 dark:text-gray-400">Todo lo que necesitás saber antes de empezar.</p>
             </div>
-            <div class="space-y-4 fade-in-up">
+            <div class="space-y-4 reveal-up">
                 <details
                     class="group bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
                     open>

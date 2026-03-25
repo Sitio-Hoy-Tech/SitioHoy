@@ -4,39 +4,54 @@
 
 /* --- Removed Logo Dark Mode --- */
 
-/* --- Animations --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes ctaPulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
-  }
-
-  50% {
-    box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
-  }
-}
-
-/* --- Fade-in-up --- */
-.fade-in-up {
+/* --- Modern Reveal Animations --- */
+[class*="reveal-"] {
   opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.fade-in-up.visible {
-  animation: fadeInUp 0.3s ease-out forwards;
+.reveal-up { transform: translateY(40px); }
+.reveal-down { transform: translateY(-40px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-scale { transform: scale(0.95); }
+
+.visible.reveal-up,
+.visible.reveal-down,
+.visible.reveal-left,
+.visible.reveal-right,
+.visible.reveal-stagger {
+  opacity: 1;
+  transform: translate(0, 0);
 }
+
+.visible.reveal-scale {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger Logic */
+.reveal-stagger > .reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.visible > .reveal-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays (up to 8 items) */
+.reveal-stagger.visible > .reveal-item:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger.visible > .reveal-item:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger.visible > .reveal-item:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.visible > .reveal-item:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger.visible > .reveal-item:nth-child(5) { transition-delay: 0.5s; }
+.reveal-stagger.visible > .reveal-item:nth-child(6) { transition-delay: 0.6s; }
+.reveal-stagger.visible > .reveal-item:nth-child(7) { transition-delay: 0.7s; }
+.reveal-stagger.visible > .reveal-item:nth-child(8) { transition-delay: 0.8s; }
 
 /* --- CTA Pulse --- */
 .cta-pulse {
@@ -48,12 +63,50 @@
 #mobile-menu {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 #mobile-menu.open {
   opacity: 1;
   visibility: visible;
+}
+
+/* Staggered link animations */
+#mobile-menu .mobile-link,
+#mobile-menu #mobile-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu.open .mobile-link,
+#mobile-menu.open #mobile-cta,
+#mobile-menu.open .opacity-0 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition-delay: calc(var(--i, 1) * 0.1s + 0.2s);
+}
+
+/* Header and Footer delays */
+#mobile-menu.open .mb-16 { transition-delay: 0.1s; }
+#mobile-menu.open .border-t { transition-delay: 0.8s; }
+
+/* --- Hamburger Animation --- */
+#menu-toggle .hamburger-line {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+#menu-toggle.open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menu-toggle.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+#menu-toggle.open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* --- Dark Mode Transition --- */
@@ -368,11 +421,33 @@ summary {
 .logo-img {
   filter: invert(59%) sepia(72%) saturate(450%) hue-rotate(113deg) brightness(92%) contrast(90%);
   transition: filter 0.3s ease;
+  width: 70px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
-/* Dark mode: white */
-.dark .logo-img {
-  filter: invert(1) brightness(2);
+.logo-wrapper {
+  background-color: white !important;
+  display: inline-flex;
+  -webkit-mask-image: url("../assets/LogoFinal.svg"), radial-gradient(circle, black 40%, transparent 40%);
+  mask-image: url("../assets/LogoFinal.svg"), radial-gradient(circle, black 44%, transparent 44%);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* --- Header Hide/Show on Scroll --- */
+#site-header {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#site-header.nav-hidden {
+  transform: translateY(-110%);
 }
 
 /* --- Grain Texture Overlay --- */
