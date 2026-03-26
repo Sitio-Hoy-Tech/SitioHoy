@@ -191,82 +191,164 @@
 
 
     <!-- ========== HERO ========== -->
-    <section id="hero" class="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden">
+    <section id="hero" class="min-h-[calc(100vh-0px)] flex flex-col pt-20 relative overflow-hidden">
         <!-- Gradient Mesh Background -->
         <div class="gradient-mesh" aria-hidden="true">
             <div class="mesh-blob mesh-blob-1"></div>
             <div class="mesh-blob mesh-blob-2"></div>
             <div class="mesh-blob mesh-blob-3"></div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div class="reveal-left">
-                    <h1
-                        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-brand-dark dark:text-white">
-                        Tu negocio online hoy.<br class="hidden sm:block">
-                        <span class="text-gray-500 dark:text-gray-400">Sin vueltas, sin costos sorpresa.</span>
-                    </h1>
-                    <p class="mt-5 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed">
-                        Tené tu web profesional por solo
-                        <strong class="text-brand-accent">$35.000 ARS/mes</strong>.
-                        Diseño y soporte premium incluidos.
-                        <span class="font-medium">Mientras vos dormís, tu web sigue trabajando.</span>
-                    </p>
-                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                        <a id="hero-cta" href="#"
-                            class="wa-link cta-pulse cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg hover:shadow-xl">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                            Quiero mi web ahora
-                        </a>
-                    </div>
-                    <!-- Micro-copy de confianza -->
-                    <p class="mt-3 text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                        Sin compromiso · Cancelá cuando quieras · Respondemos en minutos
-                    </p>
-                </div>
-                <div class="reveal-scale flex justify-center phone-mobile-scale">
-                    <!-- CSS Phone Frame + Carousel -->
-                    <div class="phone-frame">
-                        <div class="phone-notch"></div>
-                        <div class="phone-screen">
-                            <img src="assets/slide-bar.png" alt="Web para bar" class="phone-slide active">
-                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="phone-slide">
-                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="phone-slide">
-                            <img src="assets/slide-services.png" alt="Web servicios" class="phone-slide">
+
+        <!-- Main Hero Content -->
+        <div class="flex-grow flex items-center relative z-10 py-12 md:py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="reveal-left pt-10 md:py-20">
+                        <h1
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-brand-dark dark:text-white">
+                            Tu negocio online hoy.<br class="hidden sm:block">
+                            <span class="text-gray-500 dark:text-gray-400">Sin vueltas, sin costos sorpresa.</span>
+                        </h1>
+                        <p class="mt-5 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed">
+                            Tené tu web profesional por solo
+                            <strong class="text-brand-accent">$37.000 ARS/mes</strong>.
+                            Diseño y soporte premium incluidos.
+                            <span class="font-medium">Mientras vos dormís, tu web sigue trabajando.</span>
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <a id="hero-cta" href="#"
+                                class="wa-link cta-pulse cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg hover:shadow-xl">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Quiero mi web ahora
+                            </a>
                         </div>
-                        <div class="phone-dots">
-                            <span class="phone-dot active"></span>
-                            <span class="phone-dot"></span>
-                            <span class="phone-dot"></span>
-                            <span class="phone-dot"></span>
+                        <!-- Micro-copy de confianza -->
+                        <p class="mt-3 text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 text-brand-accent" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Sin compromiso · Cancelá cuando quieras · Respondemos en minutos
+                        </p>
+                    </div>
+                    <div class="reveal-scale flex flex-col items-center self-end phone-mobile-scale">
+                        <!-- Showcase Container -->
+                        <div
+                            class="showcase-container relative w-full flex justify-center items-end h-[350px] sm:h-[440px] lg:h-[500px] mb-10">
+                            
+                            <!-- Premium Spotlight -->
+                            <div class="absolute inset-x-0 bottom-0 top-1/4 bg-brand-accent/10 dark:bg-brand-accent/20 blur-[100px] rounded-full opacity-50 pointer-events-none"></div>
+
+                            <!-- MacBook Frame -->
+                            <div id="macbook-frame"
+                                class="device-frame macbook active absolute inset-0 flex justify-center items-center">
+                                <div class="macbook-body shadow-2xl">
+                                    <div class="macbook-screen">
+                                        <div class="carousel-inner relative">
+                                            <!-- Glossy Reflection -->
+                                            <div class="absolute inset-0 z-10 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none opacity-40"></div>
+                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
+                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
+                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
+                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
+                                        </div>
+                                    </div>
+                                    <div class="macbook-keyboard"></div>
+                                </div>
+                            </div>
+
+                            <!-- iPad Frame -->
+                            <div id="ipad-frame"
+                                class="device-frame ipad absolute inset-0 flex justify-center items-end">
+                                <div class="ipad-body shadow-2xl">
+                                    <div class="ipad-screen">
+                                        <div class="carousel-inner relative">
+                                            <!-- Glossy Reflection -->
+                                            <div class="absolute inset-0 z-10 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-30"></div>
+                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
+                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
+                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
+                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- iPhone Frame -->
+                            <div id="iphone-frame"
+                                class="device-frame iphone absolute inset-0 flex justify-center items-end">
+                                <div class="phone-frame shadow-2xl">
+                                    <div class="phone-notch"></div>
+                                    <div class="phone-screen">
+                                        <div class="carousel-inner relative">
+                                            <!-- Glossy Reflection -->
+                                            <div class="absolute inset-0 z-10 bg-gradient-to-tr from-white/15 to-transparent pointer-events-none opacity-40"></div>
+                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
+                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
+                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
+                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Device Switcher (Segmented Control) -->
+                        <div
+                            class="device-switcher flex p-1.5 bg-gray-100 dark:bg-gray-800/80 rounded-2xl backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-sm relative z-20">
+                            <button data-device="macbook"
+                                class="device-btn active px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 6h16M4 10h16M4 14h16M10 18h4m-8 2h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Notebook
+                            </button>
+                            <button data-device="ipad"
+                                class="device-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                Tablet
+                            </button>
+                            <button data-device="iphone"
+                                class="device-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                Celular
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ========== URGENCY BANNER ========== -->
-    <div class="bg-brand-accent/5 dark:bg-brand-accent/10 border-y border-brand-accent/20">
-        <div class="max-w-6xl mx-auto px-4 py-3 text-center">
-            <p class="text-sm text-brand-dark dark:text-gray-200 font-medium flex items-center justify-center gap-2">
-                <span class="inline-block w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
-                Solo tomamos <strong class="text-brand-accent">5 clientes nuevos</strong> por semana
-            </p>
         </div>
-    </div>
+
+        <!-- ========== URGENCY BANNER ========== -->
+        <div class="relative z-10 bg-brand-accent/5 dark:bg-brand-accent/10 border-t border-b border-brand-accent/20">
+            <div class="max-w-6xl mx-auto px-4 py-3 text-center">
+                <p
+                    class="text-sm text-brand-dark dark:text-gray-200 font-medium flex items-center justify-center gap-2">
+                    <span class="inline-block w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
+                    Solo tomamos <strong class="text-brand-accent">5 clientes nuevos</strong> por semana
+                </p>
+            </div>
+        </div>
+    </section>
 
 
     <!-- ========== PROBLEMA vs SOLUCIÓN ========== -->
-    <section id="problema" class="py-16 md:py-24 bg-white dark:bg-gray-900">
+    <section id="problema" class="py-16 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">¿Tu negocio solo existe en
@@ -361,7 +443,7 @@
 
 
     <!-- ========== WEB TRADICIONAL vs SITIOHOY ========== -->
-    <section class="py-16 md:py-24">
+    <section class="py-16 md:py-24 overflow-hidden">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">¿Cuánto cuesta una web
@@ -541,7 +623,8 @@
 
 
     <!-- ========== SOCIAL PROOF ========== -->
-    <section class="py-12 md:py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+    <section
+        class="py-12 md:py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800 overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-3 gap-6 text-center reveal-up">
                 <div>
@@ -936,7 +1019,7 @@
 
 
     <!-- ========== FAQ ========== -->
-    <section id="faq" class="py-16 md:py-24 bg-white dark:bg-gray-900">
+    <section id="faq" class="py-16 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Preguntas frecuentes</h2>

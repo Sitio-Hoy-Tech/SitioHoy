@@ -196,31 +196,65 @@
     }
 
     // =============================================
-    // Phone Carousel (Hero)
+    // Multi-Device Showcase (Hero)
     // =============================================
-    var slides = document.querySelectorAll('.phone-slide');
-    var dots = document.querySelectorAll('.phone-dot');
+    var deviceBtns = document.querySelectorAll('.device-btn');
+    var deviceFrames = document.querySelectorAll('.device-frame');
+    var showcaseDots = document.querySelectorAll('.showcase-dot');
     var currentSlide = 0;
     var slideInterval = 3500; // ms
 
+    // --- Device Switching ---
+    deviceBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var targetDevice = this.dataset.device;
+
+            // Update buttons
+            deviceBtns.forEach(function (b) { b.classList.remove('active'); });
+            this.classList.add('active');
+
+            // Update frames
+            deviceFrames.forEach(function (frame) {
+                if (frame.id === targetDevice + '-frame') {
+                    frame.classList.add('active');
+                } else {
+                    frame.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // --- Synchronized Carousel ---
     function goToSlide(index) {
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
-        currentSlide = index % slides.length;
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+        // We have slides in multiple frames, we must sync them all
+        var allSlideGroups = document.querySelectorAll('.carousel-inner');
+        var totalSlides = allSlideGroups[0].querySelectorAll('.slide').length;
+
+        currentSlide = index % totalSlides;
+
+        // Update all images in all frames
+        allSlideGroups.forEach(function (group) {
+            var slides = group.querySelectorAll('.slide');
+            slides.forEach(function (s, i) {
+                s.classList.toggle('active', i === currentSlide);
+            });
+        });
+
+        // Update dots
+        showcaseDots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === currentSlide);
+        });
     }
 
     // Auto-rotate
-    if (slides.length > 1) {
-        setInterval(function () {
-            goToSlide(currentSlide + 1);
-        }, slideInterval);
-    }
+    var carouselTimer = setInterval(function () {
+        goToSlide(currentSlide + 1);
+    }, slideInterval);
 
     // Click on dots to navigate
-    dots.forEach(function (dot, i) {
+    showcaseDots.forEach(function (dot, i) {
         dot.addEventListener('click', function () {
+            clearInterval(carouselTimer); // Stop auto-rotate on manual click
             goToSlide(i);
         });
     });
