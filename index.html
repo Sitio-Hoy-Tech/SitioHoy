@@ -191,7 +191,7 @@
 
 
     <!-- ========== HERO ========== -->
-    <section id="hero" class="min-h-[calc(100vh-0px)] flex flex-col pt-20 relative overflow-hidden">
+    <section id="hero" class="min-h-screen flex flex-col pt-20 relative overflow-hidden">
         <!-- Gradient Mesh Background -->
         <div class="gradient-mesh" aria-hidden="true">
             <div class="mesh-blob mesh-blob-1"></div>
@@ -335,12 +335,16 @@
         </div>
 
         <!-- ========== URGENCY BANNER ========== -->
-        <div class="relative z-10 bg-brand-accent/5 dark:bg-brand-accent/10 border-t border-b border-brand-accent/20">
-            <div class="max-w-6xl mx-auto px-4 py-3 text-center">
-                <p
-                    class="text-sm text-brand-dark dark:text-gray-200 font-medium flex items-center justify-center gap-2">
-                    <span class="inline-block w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
-                    Solo tomamos <strong class="text-brand-accent">5 clientes nuevos</strong> por semana
+        <div class="relative z-10 bg-amber-50 dark:bg-amber-950/30 border-t-2 border-b border-amber-300 dark:border-amber-700/60">
+            <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-3 text-center">
+                <p class="text-[11px] sm:text-xs font-semibold text-amber-800 dark:text-amber-300 whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-3 h-3 flex-shrink-0 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                    </svg>
+                    <strong>5 clientes/semana</strong> · Quedan <strong><span id="spots-hero" style="word-spacing: 0.2em;">3 lugares</span></strong>
+                </p>
+                <p class="text-[10px] sm:text-[11px] font-medium text-amber-600 dark:text-amber-400 whitespace-nowrap">
+                    <span class="hidden sm:inline">· </span>Cierra el domingo: <span id="countdown" class="font-mono font-bold text-amber-900 dark:text-amber-200 tabular-nums">--:--:--</span>
                 </p>
             </div>
         </div>
@@ -667,6 +671,14 @@
                     vos</h2>
                 <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Sin costos sorpresa. Nuestras webs
                     están optimizadas para que vendas más 24/7.</p>
+                <!-- Urgency badge -->
+                <div class="flex justify-center mt-6">
+                    <div
+                        class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/50 text-red-600 dark:text-red-400 px-4 py-2 rounded-full text-xs font-semibold shadow-sm whitespace-nowrap">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse flex-shrink-0"></span>
+                        Solo quedan <strong><span id="spots-pricing-full" style="word-spacing: 0.2em;">3 lugares</span></strong> esta semana
+                    </div>
+                </div>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 items-stretch reveal-up">
@@ -1096,32 +1108,66 @@
 
 
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-brand-dark py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-center md:text-left">
-                    <a href="#" class="text-xl font-extrabold tracking-tight"><span class="text-white">Sitio</span><span
-                            class="text-brand-accent">Hoy</span></a>
-                    <p class="text-gray-400 text-sm mt-1">Tu presencia online, resuelta.</p>
+    <footer class="bg-brand-dark">
+
+        <!-- Main -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <!-- Logo -->
+                <div class="text-center md:text-left shrink-0">
+                    <a href="#" class="inline-flex items-center gap-2">
+                        <div class="logo-wrapper">
+                            <img src="assets/LogoFinal.svg" alt="SitioHoy" class="logo-img w-9 h-9 object-contain">
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight">
+                            <span class="text-white">Sitio</span><span class="text-brand-accent">Hoy</span>
+                        </span>
+                    </a>
+                    <p class="text-gray-500 text-xs mt-1">Tu presencia online, resuelta.</p>
                 </div>
-                <div class="flex items-center gap-6">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Políticas de
-                        Servicio</a>
-                    <a id="footer-wa" href="#"
-                        class="wa-link text-gray-400 hover:text-white text-sm transition-colors">WhatsApp</a>
-                    <a href="https://instagram.com/sitiohoy" target="_blank" rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                        </svg>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm mb-3">¿Listo para estar online? <span class="text-white font-semibold">Hablemos hoy.</span></p>
+                    <a href="#" class="wa-link inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EB954] text-white font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-[#25D366]/30">
+                        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                        Escribinos por WhatsApp
                     </a>
                 </div>
-            </div>
-            <div class="border-t border-white/10 mt-8 pt-6 text-center">
-                <p class="text-gray-500 text-xs">&copy; 2026 SitioHoy. Todos los derechos reservados.</p>
+
+                <!-- Redes + Políticas -->
+                <div class="flex items-center gap-5 shrink-0">
+                    <a href="#" class="wa-link text-gray-500 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/sitiohoy" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <span class="w-px h-4 bg-white/10"></span>
+                    <a href="#" class="text-gray-600 hover:text-gray-400 text-xs transition-colors">Políticas</a>
+                </div>
+
             </div>
         </div>
+
+        <!-- Firma -->
+        <div class="border-t border-white/5">
+            <div class="py-4 flex justify-center">
+                <a href="https://sitiohoy.com.ar" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    aria-label="Desarrollado por SitioHoy">
+                    <div class="logo-wrapper">
+                        <img src="assets/LogoFinal.svg" alt="SitioHoy" class="logo-img w-9 h-9 object-contain">
+                    </div>
+                    <span class="text-sm text-gray-300 group-hover:text-white transition-colors">
+                        Desarrollado por <strong class="text-white">Sitio</strong><strong class="text-brand-accent">Hoy</strong>
+                    </span>
+                </a>
+            </div>
+        </div>
+
     </footer>
 
     <!-- ========== FLOATING WHATSAPP ========== -->
@@ -1141,6 +1187,92 @@
         </a>
     </div>
 
+
+    <!-- ========== WHEEL MODAL ========== -->
+    <div id="wheel-overlay" class="fixed inset-0 z-[10002] flex items-center justify-center p-4" style="display:none!important;">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="wheel-backdrop"></div>
+        <div id="wheel-modal"
+            class="relative bg-brand-dark dark:bg-gray-950 rounded-3xl p-6 sm:p-8 w-full max-w-sm shadow-2xl border border-white/10 overflow-hidden">
+            <!-- Grain texture -->
+            <div class="absolute inset-0 rounded-3xl opacity-[0.04] pointer-events-none"
+                style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');background-size:256px;">
+            </div>
+            <!-- Glow blob -->
+            <div class="absolute -top-20 -right-20 w-48 h-48 bg-brand-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Header -->
+            <div class="relative text-center mb-5">
+                <span class="text-2xl">🎰</span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-white mt-1 tracking-tight">¡Girá y ganá un premio!</h3>
+                <p class="text-xs text-gray-400 mt-1">Solo por visitar nuestro sitio. Una sola oportunidad.</p>
+            </div>
+
+            <!-- Wheel container -->
+            <div class="relative flex flex-col items-center">
+                <!-- Pointer arrow -->
+                <div class="relative z-10 mb-[-10px]">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path d="M10 16L0 0H20L10 16Z" fill="#10B981"/>
+                    </svg>
+                </div>
+                <!-- Canvas -->
+                <canvas id="wheel-canvas" width="280" height="280" class="block rounded-full"></canvas>
+            </div>
+
+            <!-- Spin button -->
+            <div class="mt-5 text-center">
+                <button id="wheel-spin-btn"
+                    class="w-full bg-brand-accent hover:bg-brand-accent-hover text-white font-extrabold py-3.5 rounded-full text-sm transition-all shadow-lg shadow-brand-accent/30 hover:shadow-brand-accent/50 hover:scale-[1.02] active:scale-95">
+                    ¡GIRAR AHORA!
+                </button>
+                <button id="wheel-close-btn" class="mt-3 text-xs text-gray-600 hover:text-gray-400 transition-colors">
+                    No gracias, prefiero pagar más
+                </button>
+            </div>
+
+            <!-- Result (hidden initially) -->
+            <div id="wheel-result" class="hidden mt-4 text-center p-4 bg-white/5 rounded-2xl border border-white/10">
+                <p class="text-xs text-gray-400 mb-1">¡Felicitaciones! Ganaste:</p>
+                <p id="wheel-prize-text" class="text-base font-extrabold text-brand-accent"></p>
+                <p id="wheel-prize-detail" class="text-xs text-gray-300 mt-1 mb-3"></p>
+                <a href="#" id="wheel-wa-btn"
+                    class="wa-link inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white font-bold px-5 py-2.5 rounded-full text-sm transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+                    </svg>
+                    Reclamar mi premio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== GIFT WIDGET ========== -->
+    <div id="gift-widget" class="fixed bottom-6 left-6 z-[10000]" style="display:none!important;">
+        <!-- Tooltip (prize card) -->
+        <div id="gift-tooltip"
+            class="hidden absolute bottom-16 left-0 w-56 bg-brand-dark border border-brand-accent/30 rounded-2xl p-4 shadow-2xl shadow-black/40">
+            <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Tu premio activo</p>
+            <p id="gift-prize-name" class="text-sm font-extrabold text-brand-accent"></p>
+            <p id="gift-prize-detail" class="text-[11px] text-gray-400 mt-1 mb-3 leading-relaxed"></p>
+            <a href="#" id="gift-wa-btn"
+                class="wa-link flex items-center justify-center gap-1.5 bg-brand-accent hover:bg-brand-accent-hover text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+                </svg>
+                Reclamar premio
+            </a>
+            <p class="text-[10px] text-gray-600 text-center mt-2">Vence en <span id="gift-countdown" class="font-mono font-bold text-amber-400">--</span></p>
+        </div>
+        <!-- Gift button -->
+        <button id="gift-btn"
+            class="relative w-13 h-13 flex items-center justify-center bg-brand-dark border-2 border-brand-accent rounded-full shadow-lg shadow-brand-accent/25 hover:shadow-brand-accent/50 hover:scale-110 transition-all duration-200"
+            style="width:52px;height:52px;" aria-label="Ver tu premio">
+            <span class="text-2xl select-none">🎁</span>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-accent rounded-full animate-ping opacity-75"></span>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-accent rounded-full"></span>
+        </button>
+    </div>
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
