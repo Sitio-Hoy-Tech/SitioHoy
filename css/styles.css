@@ -53,10 +53,100 @@
 .reveal-stagger.visible > .reveal-item:nth-child(7) { transition-delay: 0.7s; }
 .reveal-stagger.visible > .reveal-item:nth-child(8) { transition-delay: 0.8s; }
 
-/* --- CTA Pulse --- */
-.cta-pulse {
-  animation: ctaPulse 2s ease-in-out infinite;
-  animation-delay: 5s;
+/* --- CTA Glow Effect --- */
+.cta-glow {
+  position: relative;
+  box-shadow:
+    0 0 15px rgba(52, 211, 153, 0.4),
+    0 0 30px rgba(52, 211, 153, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  animation: ctaGlowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ctaGlowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 15px rgba(52, 211, 153, 0.4),
+      0 0 30px rgba(52, 211, 153, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(52, 211, 153, 0.55),
+      0 0 40px rgba(52, 211, 153, 0.25),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  }
+}
+
+.cta-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(52, 211, 153, 0.7),
+    rgba(74, 222, 128, 0.3),
+    rgba(52, 211, 153, 0.7),
+    rgba(74, 222, 128, 0.3)
+  );
+  z-index: -1;
+  opacity: 0.75;
+  filter: blur(3px);
+}
+
+.cta-glow:hover {
+  box-shadow:
+    0 0 20px rgba(52, 211, 153, 0.55),
+    0 0 45px rgba(52, 211, 153, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.cta-glow:hover::before {
+  opacity: 1;
+  filter: blur(5px);
+}
+
+/* Dark mode: more saturated green glow */
+.dark .cta-glow {
+  box-shadow:
+    0 0 18px rgba(16, 185, 129, 0.5),
+    0 0 35px rgba(16, 185, 129, 0.2),
+    inset 0 0 0 1px rgba(16, 185, 129, 0.15);
+  animation: ctaGlowPulseDark 2.5s ease-in-out infinite;
+}
+
+.dark .cta-glow::before {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.8),
+    rgba(52, 211, 153, 0.4),
+    rgba(16, 185, 129, 0.8),
+    rgba(52, 211, 153, 0.4)
+  );
+  opacity: 0.8;
+}
+
+.dark .cta-glow:hover {
+  box-shadow:
+    0 0 24px rgba(16, 185, 129, 0.6),
+    0 0 50px rgba(16, 185, 129, 0.3),
+    inset 0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+@keyframes ctaGlowPulseDark {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(16, 185, 129, 0.5),
+      0 0 35px rgba(16, 185, 129, 0.2),
+      inset 0 0 0 1px rgba(16, 185, 129, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 24px rgba(16, 185, 129, 0.6),
+      0 0 45px rgba(16, 185, 129, 0.3),
+      inset 0 0 0 1px rgba(16, 185, 129, 0.2);
+  }
 }
 
 /* --- Mobile Menu (Fullscreen Overlay) --- */
