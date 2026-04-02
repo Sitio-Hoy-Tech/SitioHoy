@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SitioHoy — Tu negocio online hoy</title>
     <meta name="description"
-        content="Páginas web listas en 24 horas por $35.000 ARS/mes. Elegís el diseño y nosotros hacemos el resto. SitioHoy impulsa tu negocio.">
+        content="Páginas web listas en 24 horas por $37.000 ARS/mes. Elegís el diseño y nosotros hacemos el resto. SitioHoy impulsa tu negocio.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon-green.svg">
-    <link rel="apple-touch-icon" href="assets/favicon-green.svg">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/logo-sitio-hoy.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-sitio-hoy.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-sitio-hoy.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo-sitio-hoy.png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="SitioHoy — Tu negocio online hoy">
     <meta property="og:description"
-        content="Páginas web listas en 24 horas por $35.000 ARS/mes. Diseño, hosting y soporte incluidos.">
+        content="Páginas web listas en 24 horas por $37.000 ARS/mes. Diseño, hosting y soporte incluidos.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
+
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="9caafa61-64da-43be-9f0b-f45ec53812ac"></script>
 
     <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,11 +54,14 @@
     <!-- ========== HEADER ========== -->
     <header id="site-header"
         class="fixed top-0 left-0 right-0 z-[9999] bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 transition-shadow duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+        <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
-                <a href="#" class="flex items-center gap-2 select-none">
-                    <img src="assets/LogoFinal.svg" alt="SitioHoy Logo" class="logo-img w-10 h-10 sm:w-12 sm:h-12 object-contain">
+                <a href="#" class="flex items-center gap-1 select-none">
+                    <div class="logo-wrapper">
+                        <img src="assets/LogoFinal.svg" alt="SitioHoy Logo"
+                            class="logo-img w-14 h-14 sm:w-16 sm:h-16 object-contain">
+                    </div>
                     <span class="hidden sm:inline text-2xl font-extrabold tracking-tight">
                         <span class="text-brand-dark dark:text-white">Sitio</span><span
                             class="text-brand-accent">Hoy</span>
@@ -61,7 +69,7 @@
                 </a>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-700 dark:text-gray-400">
                     <a href="#hero" class="hover:text-brand-dark dark:hover:text-white transition-colors">Inicio</a>
                     <a href="#problema" class="hover:text-brand-dark dark:hover:text-white transition-colors">Por
                         qué</a>
@@ -85,7 +93,8 @@
                         </svg>
                     </button>
                     <a id="header-cta" href="#"
-                        class="wa-link ml-2 inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm">
+                        data-wa-msg="Hola! Vi la página de SitioHoy y quiero hacer mi web"
+                        class="wa-link ml-2 inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-6 py-3 rounded-full text-sm font-semibold transition-colors shadow-sm">
                         Quiero mi web
                     </a>
                 </nav>
@@ -107,14 +116,14 @@
                         </svg>
                     </button>
                     <button id="menu-toggle"
-                        class="relative z-[60] flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors overflow-visible"
+                        class="relative z-[60] flex flex-col justify-center items-center w-10 h-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors overflow-visible gap-1.5"
                         aria-label="Abrir menú">
                         <span
-                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white transition-all duration-300"></span>
+                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white rounded-full transition-all duration-300"></span>
                         <span
-                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white mt-1.5 transition-all duration-300"></span>
+                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white rounded-full transition-all duration-300"></span>
                         <span
-                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white mt-1.5 transition-all duration-300"></span>
+                            class="hamburger-line block w-5 h-0.5 bg-brand-dark dark:bg-white rounded-full transition-all duration-300"></span>
                     </button>
                 </div>
             </div>
@@ -124,109 +133,260 @@
 
     <!-- Mobile Menu (Fullscreen Overlay — outside header to avoid backdrop-filter clipping) -->
     <div id="mobile-menu"
-        class="fixed inset-0 z-[9998] bg-white dark:bg-gray-950 flex flex-col items-center justify-center md:hidden">
-        <nav class="flex flex-col items-center gap-8 text-lg font-semibold text-gray-700 dark:text-gray-300">
-            <a href="#hero" class="mobile-link hover:text-brand-accent transition-colors">Inicio</a>
-            <a href="#problema" class="mobile-link hover:text-brand-accent transition-colors">Por qué</a>
-            <a href="#como-funciona" class="mobile-link hover:text-brand-accent transition-colors">Cómo funciona</a>
-            <a href="#precio" class="mobile-link hover:text-brand-accent transition-colors">Precio</a>
-            <a href="#faq" class="mobile-link hover:text-brand-accent transition-colors">FAQ</a>
-            <a id="mobile-cta" href="#"
-                class="wa-link inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-3.5 rounded-full text-base font-bold transition-colors shadow-lg mt-4">
-                Quiero mi web
-            </a>
+        class="fixed inset-0 z-[9998] bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl md:hidden overflow-hidden">
+        <!-- Background Blobs for Modern UI -->
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-dark/5 dark:bg-brand-accent/5 rounded-full blur-3xl animate-pulse"
+            style="animation-delay: 1s;"></div>
+
+        <nav class="relative h-full w-full flex flex-col px-8 py-12">
+            <!-- Menu Top: Logo -->
+            <div class="flex items-center justify-between mb-16 opacity-0 translate-y-4 transition-all duration-500 delay-100"
+                style="transition-property: opacity, transform;">
+                <div class="flex items-center gap-3">
+
+                </div>
+            </div>
+
+            <!-- Menu Body: Links (Staggered) -->
+            <div class="flex flex-col gap-6 text-3xl font-bold tracking-tight mb-auto">
+                <a href="#hero" class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 1">Inicio</a>
+                <a href="#problema"
+                    class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 2">Por qué</a>
+                <a href="#como-funciona"
+                    class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 3">Cómo funciona</a>
+                <a href="#precio"
+                    class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 4">Precio</a>
+                <a href="#faq" class="mobile-link text-gray-900 dark:text-white hover:text-brand-accent transition-all"
+                    style="--i: 5">FAQ</a>
+
+                <a id="mobile-cta" href="#"
+                    data-wa-msg="Hola! Vi la página de SitioHoy y quiero hacer mi web"
+                    class="wa-link mt-6 inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-brand-accent/20"
+                    style="--i: 6">
+                    Quiero mi web
+                </a>
+            </div>
+
+            <!-- Menu Bottom: Social & Tagline -->
+            <div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-4 opacity-0 translate-y-4 transition-all duration-500 delay-700"
+                style="transition-property: opacity, transform;">
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/" target="_blank"
+                        class="text-gray-400 hover:text-brand-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="wa-link text-gray-400 hover:text-brand-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm text-gray-500 font-medium tracking-wide">SitioHoy &copy; 2026. Impulsamos tu presencia
+                    digital.</p>
+            </div>
         </nav>
     </div>
 
 
     <!-- ========== HERO ========== -->
-    <section id="hero" class="pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden">
+    <section id="hero" class="min-h-screen flex flex-col pt-20 relative overflow-hidden">
         <!-- Gradient Mesh Background -->
         <div class="gradient-mesh" aria-hidden="true">
             <div class="mesh-blob mesh-blob-1"></div>
             <div class="mesh-blob mesh-blob-2"></div>
             <div class="mesh-blob mesh-blob-3"></div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div class="fade-in-up">
-                    <h1
-                        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-brand-dark dark:text-white">
-                        Tu negocio online hoy.<br class="hidden sm:block">
-                        <span class="text-gray-500 dark:text-gray-400">Sin vueltas, sin costos sorpresa.</span>
-                    </h1>
-                    <p class="mt-5 text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed">
-                        Tené tu web profesional por solo
-                        <strong class="text-brand-accent">$35.000 ARS/mes</strong>.
-                        Diseño, hosting y soporte incluidos.
-                        <span class="font-medium">Mientras vos dormís, tu web sigue trabajando.</span>
-                    </p>
-                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                        <a id="hero-cta" href="#"
-                            class="wa-link cta-pulse cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg hover:shadow-xl">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                            Quiero mi web ahora
-                        </a>
-                    </div>
-                    <!-- Micro-copy de confianza -->
-                    <p class="mt-3 text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1.5">
-                        <svg class="w-3.5 h-3.5 text-brand-accent" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                        Sin compromiso · Cancelá cuando quieras · Respondemos en minutos
-                    </p>
-                </div>
-                <div class="fade-in-up flex justify-center phone-mobile-scale">
-                    <!-- CSS Phone Frame + Carousel -->
-                    <div class="phone-frame">
-                        <div class="phone-notch"></div>
-                        <div class="phone-screen">
-                            <img src="assets/slide-bar.png" alt="Web para bar" class="phone-slide active">
-                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="phone-slide">
-                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="phone-slide">
-                            <img src="assets/slide-services.png" alt="Web servicios" class="phone-slide">
+
+        <!-- Main Hero Content -->
+        <div class="flex-grow flex items-center relative z-10 py-12 md:py-16">
+            <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 w-full">
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="reveal-left pt-10 md:py-20">
+                        <h1
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-brand-dark dark:text-white">
+                            Tu negocio online hoy.<br class="hidden sm:block">
+                            <span class="text-gray-600 dark:text-gray-400">Sin vueltas, sin costos sorpresa.</span>
+                        </h1>
+                        <p class="mt-5 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+                            Tené tu web profesional por solo
+                            <strong class="text-brand-accent">$25.000 ARS/mes</strong>.
+                            Diseño y soporte premium incluidos.
+                            <span class="font-medium">Mientras vos dormís, tu web sigue trabajando.</span>
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <a id="hero-cta" href="#"
+                                data-wa-msg="Hola! Quiero lanzar mi web hoy con SitioHoy"
+                                class="wa-link cta-glow cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg hover:shadow-xl">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Quiero mi web ahora
+                            </a>
                         </div>
-                        <div class="phone-dots">
-                            <span class="phone-dot active"></span>
-                            <span class="phone-dot"></span>
-                            <span class="phone-dot"></span>
-                            <span class="phone-dot"></span>
+                        <!-- Micro-copy de confianza -->
+                        <p class="mt-5 text-xs text-gray-500 dark:text-gray-500 flex items-start gap-1.5">
+                            <svg class="w-3.5 h-3.5 text-brand-accent" fill="none" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Sin compromiso · Cancelá cuando quieras · Respondemos en minutos
+                        </p>
+                    </div>
+                    <div class="reveal-scale flex flex-col items-center self-end phone-mobile-scale">
+                        <!-- Showcase Container -->
+                        <div
+                            class="showcase-container relative w-full flex justify-center items-end h-[350px] sm:h-[440px] lg:h-[500px] mb-10">
+
+                            <!-- Premium Spotlight -->
+                            <div
+                                class="absolute inset-x-0 bottom-0 top-1/4 bg-brand-accent/10 dark:bg-brand-accent/20 blur-[100px] rounded-full opacity-50 pointer-events-none">
+                            </div>
+
+                            <!-- MacBook Frame -->
+                            <div id="macbook-frame"
+                                class="device-frame macbook active absolute inset-0 flex justify-center items-center">
+                                <div class="macbook-body shadow-2xl">
+                                    <div class="macbook-screen">
+                                        <div class="carousel-inner relative">
+                                            <!-- Glossy Reflection -->
+                                            <div
+                                                class="absolute inset-0 z-10 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none opacity-40">
+                                            </div>
+                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
+                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
+                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
+                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
+                                            <img src="assets/gildedDestop.png" alt="Gilded Glow desktop" class="slide">
+                                        </div>
+                                    </div>
+                                    <div class="macbook-keyboard"></div>
+                                </div>
+                            </div>
+
+                            <!-- iPad Frame -->
+                            <div id="ipad-frame"
+                                class="device-frame ipad absolute inset-0 flex justify-center items-end">
+                                <div class="ipad-body shadow-2xl">
+                                    <div class="ipad-screen">
+                                        <div class="carousel-inner relative">
+                                            <!-- Glossy Reflection -->
+                                            <div
+                                                class="absolute inset-0 z-10 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-30">
+                                            </div>
+                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
+                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
+                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
+                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
+                                            <img src="assets/gildedTablet.png" alt="Gilded Glow tablet" class="slide">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- iPhone Frame -->
+                            <div id="iphone-frame"
+                                class="device-frame iphone absolute inset-0 flex justify-center items-end">
+                                <div class="phone-frame shadow-2xl">
+                                    <div class="phone-notch"></div>
+                                    <div class="phone-screen">
+                                        <div class="carousel-inner relative">
+                                            <!-- Glossy Reflection -->
+                                            <div
+                                                class="absolute inset-0 z-10 bg-gradient-to-tr from-white/15 to-transparent pointer-events-none opacity-40">
+                                            </div>
+                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
+                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
+                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
+                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
+                                            <img src="assets/gildedCelullar.png" alt="Gilded Glow celular" class="slide">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Device Switcher (Segmented Control) -->
+                        <div
+                            class="device-switcher flex p-1.5 bg-gray-100 dark:bg-gray-800/80 rounded-2xl backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-sm relative z-20">
+                            <button data-device="macbook"
+                                class="device-btn active px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 6h16M4 10h16M4 14h16M10 18h4m-8 2h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Notebook
+                            </button>
+                            <button data-device="ipad"
+                                class="device-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                Tablet
+                            </button>
+                            <button data-device="iphone"
+                                class="device-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                Celular
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ========== URGENCY BANNER ========== -->
-    <div class="bg-brand-accent/5 dark:bg-brand-accent/10 border-y border-brand-accent/20">
-        <div class="max-w-6xl mx-auto px-4 py-3 text-center">
-            <p class="text-sm text-brand-dark dark:text-gray-200 font-medium flex items-center justify-center gap-2">
-                <span class="inline-block w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
-                Solo tomamos <strong class="text-brand-accent">5 clientes nuevos</strong> por semana
-            </p>
         </div>
-    </div>
+
+        <!-- ========== URGENCY BANNER ========== -->
+        <div class="relative z-10 bg-amber-50 dark:bg-amber-950/30 border-t-2 border-b border-amber-300 dark:border-amber-700/60">
+            <div class="max-w-6xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-3 text-center">
+                <p class="text-[11px] sm:text-xs font-semibold text-amber-800 dark:text-amber-300 whitespace-nowrap flex items-center gap-1.5">
+                    <svg class="w-3 h-3 flex-shrink-0 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <strong>5 clientes/semana</strong> · Quedan <strong><span id="spots-hero"
+                            style="word-spacing: 0.2em;">3 lugares</span></strong>
+                </p>
+                <p class="text-[10px] sm:text-[11px] font-medium text-amber-600 dark:text-amber-400 whitespace-nowrap">
+                    <span class="hidden sm:inline">· </span>Cierra el domingo: <span id="countdown"
+                        class="font-mono font-bold text-amber-900 dark:text-amber-200 tabular-nums">--:--:--</span>
+                </p>
+            </div>
+        </div>
+    </section>
 
 
     <!-- ========== PROBLEMA vs SOLUCIÓN ========== -->
-    <section id="problema" class="py-16 md:py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+    <section id="problema" class="py-16 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">¿Tu negocio solo existe en
                     redes?</h2>
-                <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Esto es lo que pasa cuando no tenés
+                <p class="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Esto es lo que pasa cuando no tenés
                     web propia.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                 <!-- Problema -->
                 <div
-                    class="fade-in-up bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-left bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gray-300 dark:bg-gray-600 rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span
@@ -236,26 +396,26 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </span>
-                        <h3 class="text-lg font-bold text-gray-400">Depender solo de las redes</h3>
+                        <h3 class="text-lg font-bold text-gray-500">Depender solo de las redes</h3>
                     </div>
-                    <ul class="space-y-3 text-gray-400">
+                    <ul class="space-y-3 text-gray-500">
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>Respondés los mismos mensajes una y otra vez</li>
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>La gente no te encuentra fuera del feed</li>
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>Cero presencia en Google</li>
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>Tu negocio no se ve profesional</li>
@@ -263,7 +423,7 @@
                 </div>
                 <!-- Solución -->
                 <div
-                    class="fade-in-up bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-right bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-brand-accent rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="flex items-center justify-center w-10 h-10 bg-brand-accent/15 rounded-full">
@@ -295,8 +455,9 @@
                 </div>
             </div>
             <!-- CTA Intermedio -->
-            <div class="text-center mt-10 fade-in-up">
+            <div class="text-center mt-10 reveal-up">
                 <a href="#"
+                    data-wa-msg="Hola! Quiero tener mi presencia online con SitioHoy"
                     class="wa-link inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-colors shadow-md hover:shadow-lg">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -310,18 +471,18 @@
 
 
     <!-- ========== WEB TRADICIONAL vs SITIOHOY ========== -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+    <section class="py-16 md:py-24 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">¿Cuánto cuesta una web
                     normalmente?</h2>
-                <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Spoiler: con nosotros, mucho menos.
+                <p class="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Spoiler: con nosotros, mucho menos.
                 </p>
             </div>
             <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                 <!-- Tradicional -->
                 <div
-                    class="fade-in-up bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-left bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gray-300 dark:bg-gray-600 rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span
@@ -332,26 +493,26 @@
                                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </span>
-                        <h3 class="text-lg font-bold text-gray-400">Agencia / Freelancer</h3>
+                        <h3 class="text-lg font-bold text-gray-500">Agencia / Freelancer</h3>
                     </div>
-                    <ul class="space-y-3 text-gray-400">
+                    <ul class="space-y-3 text-gray-500">
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>$300.000 – $800.000 de inversión inicial</li>
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>2 a 4 semanas de espera (mínimo)</li>
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>Hosting aparte (~$10.000/mes extra)</li>
                         <li class="flex items-start gap-2"><svg
-                                class="w-5 h-5 mt-0.5 text-gray-300 dark:text-gray-600 shrink-0" fill="none"
+                                class="w-5 h-5 mt-0.5 text-gray-400 dark:text-gray-600 shrink-0" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
                             </svg>Cada cambio que necesités se cobra aparte</li>
@@ -359,7 +520,7 @@
                 </div>
                 <!-- SitioHoy -->
                 <div
-                    class="fade-in-up bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
+                    class="reveal-right bg-emerald-50 dark:bg-emerald-950/30 border-2 border-brand-accent/30 rounded-2xl p-8 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-brand-accent rounded-l-2xl"></div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="flex items-center justify-center w-10 h-10 bg-brand-accent/15 rounded-full">
@@ -382,7 +543,7 @@
                         <li class="flex items-start gap-2"><svg class="w-5 h-5 mt-0.5 text-brand-accent shrink-0"
                                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                            </svg><strong>Todo incluido</strong> por $35.000/mes</li>
+                            </svg><strong>Todo incluido</strong> por $3.000/mes</li>
                         <li class="flex items-start gap-2"><svg class="w-5 h-5 mt-0.5 text-brand-accent shrink-0"
                                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -391,16 +552,17 @@
                 </div>
             </div>
             <!-- CTA -->
-            <div class="text-center mt-10 fade-in-up">
+            <div class="text-center mt-10 reveal-up">
                 <a href="#"
+                    data-wa-msg="Hola! Quiero empezar con SitioHoy por $25.000/mes"
                     class="wa-link cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-colors shadow-md hover:shadow-lg">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
-                    Empezá hoy por $35.000/mes
+                    Empezá hoy por $25.000/mes
                 </a>
-                <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">Sin inversión inicial · Cancelá cuando quieras
+                <p class="mt-4 text-xs text-gray-500 dark:text-gray-500">Sin inversión inicial · Cancelá cuando quieras
                 </p>
             </div>
         </div>
@@ -412,15 +574,15 @@
         <!-- Floating Blob -->
         <div class="floating-blob floating-blob-1" aria-hidden="true"></div>
         <div class="floating-blob floating-blob-2" aria-hidden="true"></div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 fade-in-up">
+        <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Empezá en 3 pasos</h2>
-                <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Tan fácil que no lo vas a creer.</p>
+                <p class="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Tan fácil que no lo vas a creer.</p>
             </div>
-            <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid sm:grid-cols-3 gap-6 md:gap-8 reveal-stagger">
                 <!-- Paso 1 -->
                 <div
-                    class="fade-in-up group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                    class="reveal-item group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                     <div
                         class="mx-auto w-16 h-16 flex items-center justify-center bg-brand-accent/10 rounded-2xl mb-5 group-hover:bg-brand-accent/20 transition-colors">
                         <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -433,12 +595,12 @@
                         class="inline-block text-xs font-bold text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full mb-3">Paso
                         1</span>
                     <h3 class="text-lg font-bold mb-2">Elegís el diseño</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Te mostramos plantillas profesionales. Vos
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Te mostramos plantillas profesionales. Vos
                         elegís la que más te guste.</p>
                 </div>
                 <!-- Paso 2 -->
                 <div
-                    class="fade-in-up group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                    class="reveal-item group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                     <div
                         class="mx-auto w-16 h-16 flex items-center justify-center bg-brand-accent/10 rounded-2xl mb-5 group-hover:bg-brand-accent/20 transition-colors">
                         <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -451,12 +613,12 @@
                         class="inline-block text-xs font-bold text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full mb-3">Paso
                         2</span>
                     <h3 class="text-lg font-bold mb-2">Enviás info para tu Diseño</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Nos mandás los textos, fotos y datos de tu
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Nos mandás los textos, fotos y datos de tu
                         negocio. Nosotros armamos todo.</p>
                 </div>
                 <!-- Paso 3 -->
                 <div
-                    class="fade-in-up group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                    class="reveal-item group bg-white dark:bg-gray-900 rounded-2xl p-8 text-center border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                     <div
                         class="mx-auto w-16 h-16 flex items-center justify-center bg-brand-accent/10 rounded-2xl mb-5 group-hover:bg-brand-accent/20 transition-colors">
                         <svg class="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -469,13 +631,14 @@
                         class="inline-block text-xs font-bold text-brand-accent bg-brand-accent/10 px-3 py-1 rounded-full mb-3">Paso
                         3</span>
                     <h3 class="text-lg font-bold mb-2">En 24hs estás online</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm">Tu web profesional está lista, vendiendo y
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Tu web profesional está lista, vendiendo y
                         recibiendo visitas y consultas 24/7.</p>
                 </div>
             </div>
             <!-- CTA después de los 3 pasos -->
-            <div class="text-center mt-12 fade-in-up">
+            <div class="text-center mt-12 reveal-up">
                 <a href="#"
+                    data-wa-msg="Hola! Quiero empezar a hacer mi web con SitioHoy"
                     class="wa-link cta-hover inline-flex items-center justify-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -483,127 +646,483 @@
                     </svg>
                     Empezar es así de fácil
                 </a>
-                <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">Te respondemos en minutos por WhatsApp</p>
+                <p class="mt-4 text-xs text-gray-500 dark:text-gray-500">Te respondemos en minutos por WhatsApp</p>
             </div>
         </div>
     </section>
 
 
     <!-- ========== SOCIAL PROOF ========== -->
-    <section class="py-12 md:py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-3 gap-6 text-center fade-in-up">
-                <div>
-                    <span class="counter block text-3xl sm:text-4xl font-extrabold text-brand-accent"
-                        data-target="50">0</span>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Sitios lanzados</p>
+    <section
+        class="py-12 md:py-16 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800 overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-3 gap-6 text-center reveal-up">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="flex items-baseline justify-center">
+                        <span class="text-3xl sm:text-4xl font-extrabold text-brand-accent mr-0.5">+</span>
+                        <span class="counter text-3xl sm:text-4xl font-extrabold text-brand-accent tracking-tighter"
+                            data-target="50">0</span>
+                    </div>
+                    <p class="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">Sitios lanzados</p>
                 </div>
-                <div>
-                    <span class="counter block text-3xl sm:text-4xl font-extrabold text-brand-accent"
-                        data-target="24">0</span>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Horas de entrega</p>
+                <div class="flex flex-col items-center justify-center">
+                    <div class="flex items-baseline justify-center">
+                        <span class="counter text-3xl sm:text-4xl font-extrabold text-brand-accent tracking-tighter"
+                            data-target="24">0</span>
+                        <span class="text-2xl sm:text-3xl font-extrabold text-brand-accent ml-0.5">hs</span>
+                    </div>
+                    <p class="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">Horas de entrega</p>
                 </div>
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <div class="flex items-baseline justify-center gap-0.5">
-                        <span class="counter text-3xl sm:text-4xl font-extrabold text-brand-accent" data-target="4.9"
-                            data-decimal="true">0</span>
+                        <span class="counter text-3xl sm:text-4xl font-extrabold text-brand-accent tracking-tighter"
+                            data-target="4.9" data-decimal="true">0</span>
+                        <span class="text-2xl sm:text-3xl font-extrabold text-brand-accent mr-1">/5</span>
                         <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                             <path
                                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                     </div>
-                    <p class="mt-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Satisfacción</p>
+                    <p class="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">Satisfacción</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== CLIENTES ========== -->
+    <section class="py-6 md:py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+        <div class="max-w-2xl mx-auto px-4 text-center mb-4 md:mb-12 reveal-up">
+            <p class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-2 md:mb-3">Clientes que confían en nosotros</p>
+            <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight text-brand-dark dark:text-white">
+                Negocios reales, <span class="text-brand-accent">online hoy</span>
+            </h2>
+        </div>
+
+        <div class="clients-marquee-container overflow-hidden">
+            <div class="clients-track">
+                <!-- 4 repeticiones × 2 mitades = loop sin huecos en cualquier pantalla -->
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <!-- Segunda mitad idéntica para el -50% seamless loop -->
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
+
+                <a href="https://gildedglowskin.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item client-logo-wide mx-6 sm:mx-10"><img src="assets/clients-logo/client-1.png" alt="Gilded Glow Skin" class="object-contain"></a>
+                <a href="https://milan-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-2.png" alt="Milan Bar" class="h-20 sm:h-24 w-auto object-contain"></a>
+                <a href="https://matiezeordu.com.ar" target="_blank" rel="noopener noreferrer" class="client-logo-item mx-6 sm:mx-10"><img src="assets/clients-logo/client-3.png" alt="Matias Ezeordu" class="h-20 sm:h-24 w-auto object-contain"></a>
             </div>
         </div>
     </section>
 
 
     <!-- ========== PRICING ========== -->
-    <section id="precio" class="py-16 md:py-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Precio transparente</h2>
-                <p class="mt-3 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Sin letra chica, sin sorpresas. Un
-                    solo plan con todo incluido.</p>
+    <section id="precio" class="py-16 md:py-24 bg-brand-bg dark:bg-gray-950 relative overflow-hidden">
+        <div
+            class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-800 to-transparent">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-up">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Elegí el plan perfecto para
+                    vos</h2>
+                <p class="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Sin costos sorpresa. Nuestras webs
+                    están optimizadas para que vendas más 24/7.</p>
+                <!-- Urgency badge -->
+                <div class="flex justify-center mt-6">
+                    <div
+                        class="inline-flex items-center gap-2 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/50 text-red-600 dark:text-red-400 px-4 py-2 rounded-full text-xs font-semibold shadow-sm whitespace-nowrap">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse flex-shrink-0"></span>
+                        Solo quedan <strong><span id="spots-pricing-full" style="word-spacing: 0.2em;">3
+                                lugares</span></strong> esta semana
+                    </div>
+                </div>
             </div>
-            <div class="max-w-md mx-auto fade-in-up">
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch reveal-up">
+
+                <!-- PLAN ESENCIAL -->
                 <div
-                    class="relative bg-gradient-to-br from-brand-dark to-slate-800 rounded-3xl p-8 sm:p-10 text-white shadow-2xl overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 w-40 h-40 bg-brand-accent/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
+                    class="bg-gray-50 dark:bg-gray-900 rounded-[2rem] p-8 border border-gray-200 dark:border-gray-800 shadow-xl shadow-gray-200/20 dark:shadow-none flex flex-col h-full hover:border-brand-accent/30 transition-colors duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Esencial</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 min-h-[40px]">Ideal para marcar
+                            presencia y recibir consultas directas.</p>
                     </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-32 h-32 bg-brand-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
-                    </div>
-                    <div class="relative z-10">
-                        <span
-                            class="inline-block text-xs font-bold text-brand-accent bg-brand-accent/15 px-3 py-1 rounded-full mb-5 uppercase tracking-wide">Plan
-                            único</span>
-                        <div class="flex items-baseline gap-1 mb-1">
-                            <span class="text-lg text-gray-300">$</span>
-                            <span class="text-5xl sm:text-6xl font-extrabold tracking-tight">35.000</span>
+                    <div class="mb-8 border-b border-gray-100 dark:border-gray-800 pb-8">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-xl text-gray-500 font-medium">$</span>
+                            <span
+                                class="text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">25.000</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-8">ARS / mes</p>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent shrink-0"
-                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <p class="text-sm text-gray-600 mt-1 font-medium">ARS / mes</p>
+                    </div>
+                    <ul class="space-y-3 xl:space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                </svg><span class="text-sm text-gray-200">Diseño web profesional y optimizado</span>
-                            </li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent shrink-0"
-                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Sitio
+                                    web:</strong> Estático y rápido</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                </svg><span class="text-sm text-gray-200">Hosting rápido incluido</span></li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent shrink-0"
-                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                </svg></span>
+                            <span
+                                class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Catálogo:</strong>
+                                Hasta 50 productos/servicios</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                </svg><span class="text-sm text-gray-200">Certificado SSL (https seguro)</span></li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent shrink-0"
-                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Diseño
+                                    responsive:</strong> Móvil y PC</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                </svg><span class="text-sm text-gray-200">Canal de contacto directo (WhatsApp, email,
-                                    etc.)</span></li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent shrink-0"
-                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                </svg></span>
+                            <span
+                                class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Consultas:</strong>
+                                WhatsApp integrado</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                </svg><span class="text-sm text-gray-200">Dominio gestionado por nosotros</span></li>
-                        </ul>
-                        <a id="pricing-cta" href="#"
-                            class="wa-link cta-pulse cta-hover block w-full text-center bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-full text-base font-bold transition-all shadow-lg hover:shadow-xl">
-                            Suscribirme y empezar
-                        </a>
-                        <p class="text-center text-xs text-gray-500 mt-3 flex items-center justify-center gap-1.5">
-                            <svg class="w-3.5 h-3.5 text-brand-accent" fill="none" stroke="currentColor"
-                                stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                            Sin compromiso · Cancelá cuando quieras
-                        </p>
-                        <div class="flex items-center justify-center gap-2 mt-2">
-                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                            </svg>
-                            <p class="text-xs text-gray-500">Pagá con tarjeta — se debita automático cada mes</p>
+                                </svg></span>
+                            <span
+                                class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Autogestión:</strong>
+                                Para fotos y textos</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Soporte
+                                    web:</strong> Asistencia en 48hs</span>
+                        </li>
+                    </ul>
+                    <div class="mt-auto">
+                        <a href="#"
+                            data-wa-msg="Hola! Quiero lanzar mi sitio con el Plan Esencial de SitioHoy"
+                            class="wa-link block w-full text-center bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-brand-dark dark:text-white px-8 py-4 rounded-full text-sm font-bold transition-colors">Quiero
+                            presencia online</a>
+                        <p class="text-[11px] text-center text-gray-600 mt-3 font-medium">Sin permanencia mínima ·
+                            Configuración incluida</p>
+                    </div>
+                </div>
+
+                <!-- PLAN EMPRENDIMIENTO -->
+                <div class="relative transform lg:-translate-y-4 flex flex-col z-10">
+                    <div class="absolute -top-5 inset-x-0 flex justify-center z-20">
+                        <span
+                            class="bg-brand-accent text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-brand-accent/30">MÁS
+                            ELEGIDO PARA VENDER</span>
+                    </div>
+                    <div
+                        class="bg-brand-dark dark:bg-slate-800 rounded-[2rem] p-1 shadow-2xl shadow-brand-dark/20 flex flex-col h-full bg-gradient-to-b from-brand-accent/50 to-transparent">
+                        <div
+                            class="bg-brand-dark dark:bg-slate-900 rounded-[30px] p-8 h-full flex flex-col relative overflow-hidden">
+                            <div
+                                class="absolute top-0 right-0 w-48 h-48 bg-brand-accent/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none">
+                            </div>
+                            <div class="relative z-10 mb-6">
+                                <h3 class="text-2xl font-bold text-white tracking-tight">Emprendimiento</h3>
+                                <p class="text-sm text-gray-400 mt-2 min-h-[40px]">Todo lo necesario para cobrar online
+                                    y autogestionar tus ventas.</p>
+                            </div>
+                            <div class="relative z-10 mb-8 border-b border-white/10 pb-8">
+                                <span
+                                    class="block text-lg text-gray-500 font-medium line-through mb-1 decoration-red-500/70 decoration-2">$47.000</span>
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-xl text-gray-400 font-medium">$</span>
+                                    <span class="text-5xl font-extrabold text-white tracking-tight">37.000</span>
+                                </div>
+                                <p class="text-sm text-gray-400 mt-1 font-medium">ARS / mes</p>
+                            </div>
+                            <ul class="relative z-10 space-y-3 xl:space-y-4 mb-8 flex-1">
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Sitio web:</strong>
+                                        Dinámico con base</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Catálogo:</strong> Hasta
+                                        200 productos</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Cobros:</strong>
+                                        MercadoPago y cuotas</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Envíos:</strong> Valores
+                                        fijos por zona</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Estadísticas:</strong>
+                                        Visitas y tráfico</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Autogestión:</strong>
+                                        Tienda 100% vital</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex items-center justify-center w-5 h-5 rounded-full bg-brand-accent/20 text-brand-accent shrink-0 mt-0.5"><svg
+                                            class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg></span>
+                                    <span class="text-sm text-gray-200 leading-snug"><strong>Soporte ágil:</strong>
+                                        Asistencia en 24hs</span>
+                                </li>
+                            </ul>
+                            <div class="relative z-10 mt-auto">
+                                <a href="#"
+                                    data-wa-msg="Hola! Quiero lanzar mi sitio con el Plan Emprendimiento de SitioHoy"
+                                    class="wa-link block w-full text-center bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-4 rounded-full text-sm font-extrabold transition-all shadow-lg hover:shadow-brand-accent/50 scale-100 hover:scale-[1.02] transform cta-pulse flex items-center justify-center gap-2">¡Quiero
+                                    escalar mis ventas! <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg></a>
+                                <p class="text-[11px] text-center text-gray-400 mt-3 font-medium">Sin permanencia mínima
+                                    · Configuración incluida</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- PLAN EMPRESA -->
+                <div
+                    class="relative bg-gray-50 dark:bg-gray-900 rounded-[2rem] p-8 border-2 border-emerald-500/30 dark:border-emerald-500/40 shadow-xl shadow-gray-200/20 dark:shadow-none flex flex-col h-full hover:border-emerald-500/70 transition-colors duration-300 mt-6 lg:mt-0">
+                    <span
+                        class="absolute top-0 right-8 -mt-3.5 bg-gradient-to-r from-emerald-500 to-teal-400 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow border-2 border-white dark:border-gray-900">Máximo
+                        Rendimiento</span>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Empresa</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 min-h-[40px]">Potencia total para
+                            escalar tu negocio y medir cada resultado.</p>
+                    </div>
+                    <div class="mb-8 border-b border-gray-100 dark:border-gray-800 pb-8">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-xl text-gray-500 font-medium">$</span>
+                            <span
+                                class="text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">65.000</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1 font-medium">ARS / mes</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Sitio
+                                    web:</strong> Dinámico con panel maestro</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span
+                                class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Catálogo:</strong>
+                                Ilimitados sin restricción</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Cobros:</strong>
+                                MercadoPago + otras pasarelas</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Envíos:</strong>
+                                Automatizados con tarifa de correo</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span
+                                class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Estadísticas:</strong>
+                                Conversiones y analítica avanzada</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span
+                                class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Autogestión:</strong>
+                                Control total sin límites</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span
+                                class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"><svg
+                                    class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg></span>
+                            <span class="text-sm text-gray-700 dark:text-gray-300 leading-snug"><strong>Soporte
+                                    VIP:</strong> Atención prioritaria en el día</span>
+                        </li>
+                    </ul>
+                    <div class="mt-auto">
+                        <a href="#"
+                            data-wa-msg="Hola! Quiero lanzar mi sitio con el Plan Empresa de SitioHoy"
+                            class="wa-link block w-full text-center bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-brand-dark dark:text-white px-8 py-4 rounded-full text-sm font-bold transition-colors">Llevar
+                            mi negocio al máximo</a>
+                        <p class="text-[11px] text-center text-gray-600 mt-3 font-medium">Sin permanencia mínima ·
+                            Configuración incluida</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="mt-12 md:mt-16 text-center max-w-5xl mx-auto rounded-2xl bg-gray-50 dark:bg-gray-800/50 p-6 border border-gray-100 dark:border-gray-800 reveal-up">
+                <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                    <strong class="text-gray-900 dark:text-white">Todos los planes incluyen sin cargo
+                        adicional:</strong>
+                </p>
+                <div class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-y-3 sm:gap-x-6 items-start sm:items-center max-w-xs sm:max-w-none mx-auto text-xs text-gray-600 dark:text-gray-400 font-medium">
+                    <span class="flex items-center gap-2 whitespace-nowrap">
+                        <span class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        </span>Diseño profesional</span>
+                    <span class="flex items-center gap-2 whitespace-nowrap">
+                        <span class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        </span>Asesoramiento personalizado</span>
+                    <span class="flex items-center gap-2 whitespace-nowrap">
+                        <span class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        </span>Certificado SSL (Sitio seguro)</span>
+                    <span class="flex items-center gap-2 whitespace-nowrap">
+                        <span class="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        </span>Alta de dominio</span>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-center reveal-up">
+                <p class="text-center text-xs text-gray-600 flex items-start justify-center gap-1.5">
+                    <svg class="w-4 h-4 text-brand-accent/70" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>Abonás el plan mensualmente con tarjeta. Cancelás cuando quieras sin costo.
+                </p>
             </div>
         </div>
     </section>
 
 
     <!-- ========== FAQ ========== -->
-    <section id="faq" class="py-16 md:py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-in-up">
+    <section id="faq" class="py-16 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
+        <div class="max-w-3xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Preguntas frecuentes</h2>
-                <p class="mt-3 text-gray-500 dark:text-gray-400">Todo lo que necesitás saber antes de empezar.</p>
+                <p class="mt-3 text-gray-600 dark:text-gray-400">Todo lo que necesitás saber antes de empezar.</p>
             </div>
-            <div class="space-y-4 fade-in-up">
+            <div class="space-y-4 reveal-up">
                 <details
                     class="group bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
                     open>
@@ -615,7 +1134,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Sí, podés cancelar tu
+                    <p class="px-6 pt-4 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Sí, podés
+                        cancelar tu
                         suscripción en cualquier momento. No hay contratos de permanencia ni penalidades. Si cancelás,
                         tu sitio se desactiva al finalizar el período pagado.</p>
                 </details>
@@ -629,7 +1149,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Si ya tenés
+                    <p class="px-6 pt-4 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Si ya tenés
                         un dominio, lo conectamos a tu web sin problema. Si todavía no tenés uno, nosotros nos
                         encargamos
                         de la compra y configuración del dominio .com.ar para que no tengas que preocuparte
@@ -645,7 +1165,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Aceptamos pago con
+                    <p class="px-6 pt-4 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Aceptamos pago
+                        con
                         tarjeta de débito o crédito. El cobro es automático cada mes, así no tenés que estar pendiente
                         ni enviar comprobantes.</p>
                 </details>
@@ -659,7 +1180,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Hacemos páginas
+                    <p class="px-6 pt-4 pb-6 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Hacemos páginas
                         profesionales para negocios, emprendimientos y profesionales: catálogos, páginas de servicios,
                         portfolios, landing pages, y más. Son
                         sitios optimizados para celular con canal de contacto directo para que te escriban al instante.
@@ -671,32 +1192,84 @@
 
 
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-brand-dark py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-center md:text-left">
-                    <a href="#" class="text-xl font-extrabold tracking-tight"><span class="text-white">Sitio</span><span
-                            class="text-brand-accent">Hoy</span></a>
-                    <p class="text-gray-400 text-sm mt-1">Tu presencia online, resuelta.</p>
+    <footer class="bg-brand-dark">
+
+        <!-- Main -->
+        <div class="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                <!-- Logo -->
+                <div class="text-center md:text-left shrink-0">
+                    <a href="#" class="inline-flex items-center gap-2">
+                        <div class="logo-wrapper">
+                            <img src="assets/LogoFinal.svg" alt="SitioHoy" class="logo-img w-9 h-9 object-contain">
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight">
+                            <span class="text-white">Sitio</span><span class="text-brand-accent">Hoy</span>
+                        </span>
+                    </a>
+                    <p class="text-gray-500 text-xs mt-1 hidden md:block">Tu presencia online, resuelta.</p>
                 </div>
-                <div class="flex items-center gap-6">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Políticas de
-                        Servicio</a>
-                    <a id="footer-wa" href="#"
-                        class="wa-link text-gray-400 hover:text-white text-sm transition-colors">WhatsApp</a>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm mb-3">¿Listo para estar online? <span
+                            class="text-white font-semibold">Hablemos hoy.</span></p>
+                    <a href="#"
+                        data-wa-msg="Hola SitioHoy! Quiero hacer una web"
+                        class="wa-link inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EB954] text-white font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-500 ease-in-out hover:shadow-lg hover:shadow-[#25D366]/30">
+                        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+                        </svg>
+                        Escribinos por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Redes + Políticas -->
+                <div class="flex items-center gap-5 shrink-0">
+                    <a href="#" class="wa-link text-gray-500 hover:text-[#25D366] transition-colors"
+                        aria-label="WhatsApp">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+                        </svg>
+                    </a>
                     <a href="https://instagram.com/sitiohoy" target="_blank" rel="noopener noreferrer"
-                        class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                        class="text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                         </svg>
                     </a>
+                    <span class="w-px h-4 bg-white/10"></span>
+                    <a href="#" class="text-gray-600 hover:text-gray-400 text-xs transition-colors">Políticas</a>
                 </div>
-            </div>
-            <div class="border-t border-white/10 mt-8 pt-6 text-center">
-                <p class="text-gray-500 text-xs">&copy; 2026 SitioHoy. Todos los derechos reservados.</p>
+
             </div>
         </div>
+
+        <!-- Firma -->
+        <div class="border-t border-white/5">
+            <div class="py-2 flex justify-center">
+                <a href="https://sitiohoy.com.ar" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 group opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    aria-label="Desarrollado por SitioHoy">
+                    <div class="logo-wrapper">
+                        <img src="assets/LogoFinal.svg" alt="SitioHoy" class="logo-img w-9 h-9 object-contain">
+                    </div>
+                    <span class="text-sm text-gray-300 group-hover:text-white transition-colors">
+                        Desarrollado por <strong class="text-white">Sitio</strong><strong
+                            class="text-brand-accent">Hoy</strong>
+                    </span>
+                </a>
+            </div>
+        </div>
+
     </footer>
 
     <!-- ========== FLOATING WHATSAPP ========== -->
@@ -707,6 +1280,7 @@
             ¿Alguna duda? Escribinos 💬
         </span>
         <a id="floating-wa" href="#"
+            data-wa-msg="Hola! Quiero hacer una web con SitioHoy"
             class="wa-link w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#1EB954] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             aria-label="Contactar por WhatsApp">
             <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
@@ -716,6 +1290,102 @@
         </a>
     </div>
 
+
+    <!-- ========== WHEEL MODAL ========== -->
+    <div id="wheel-overlay" class="fixed inset-0 z-[10002] flex items-center justify-center p-4"
+        style="display:none!important;">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="wheel-backdrop"></div>
+        <div id="wheel-modal"
+            class="relative bg-brand-dark dark:bg-gray-950 rounded-3xl p-6 sm:p-8 w-full max-w-sm shadow-2xl border border-white/10 overflow-hidden">
+            <!-- Grain texture -->
+            <div class="absolute inset-0 rounded-3xl opacity-[0.04] pointer-events-none"
+                style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');background-size:256px;">
+            </div>
+            <!-- Glow blob -->
+            <div
+                class="absolute -top-20 -right-20 w-48 h-48 bg-brand-accent/20 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <!-- Header -->
+            <div class="relative text-center mb-5">
+                <span class="text-2xl">🎰</span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-white mt-1 tracking-tight">¡Girá y ganá un premio!
+                </h3>
+                <p class="text-xs text-gray-400 mt-1">Solo por visitar nuestro sitio. Una sola oportunidad.</p>
+            </div>
+
+            <!-- Wheel container -->
+            <div class="relative flex flex-col items-center">
+                <!-- Pointer arrow -->
+                <div class="relative z-10 mb-[-10px]">
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                        <path d="M10 16L0 0H20L10 16Z" fill="#10B981" />
+                    </svg>
+                </div>
+                <!-- Canvas -->
+                <canvas id="wheel-canvas" width="280" height="280" class="block rounded-full"></canvas>
+            </div>
+
+            <!-- Spin button -->
+            <div class="mt-5 text-center">
+                <button id="wheel-spin-btn"
+                    class="w-full bg-brand-accent hover:bg-brand-accent-hover text-white font-extrabold py-3.5 rounded-full text-sm transition-all shadow-lg shadow-brand-accent/30 hover:shadow-brand-accent/50 hover:scale-[1.02] active:scale-95">
+                    ¡GIRAR AHORA!
+                </button>
+                <button id="wheel-close-btn" class="mt-3 text-xs text-gray-600 hover:text-gray-400 transition-colors">
+                    No gracias, prefiero pagar más
+                </button>
+            </div>
+
+            <!-- Result (hidden initially) -->
+            <div id="wheel-result" class="hidden mt-4 text-center p-4 bg-white/5 rounded-2xl border border-white/10">
+                <p class="text-xs text-gray-400 mb-1">¡Felicitaciones! Ganaste:</p>
+                <p id="wheel-prize-text" class="text-base font-extrabold text-brand-accent"></p>
+                <p id="wheel-prize-detail" class="text-xs text-gray-300 mt-1 mb-3"></p>
+                <a href="#" id="wheel-wa-btn"
+                    class="wa-link inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white font-bold px-5 py-2.5 rounded-full text-sm transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+                    </svg>
+                    Reclamar mi premio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== GIFT WIDGET ========== -->
+    <div id="gift-widget" class="fixed bottom-6 left-6 z-[10000]" style="display:none!important;">
+        <!-- Tooltip (prize card) -->
+        <div id="gift-tooltip"
+            class="hidden absolute bottom-16 left-0 w-56 bg-brand-dark border border-brand-accent/30 rounded-2xl p-4 shadow-2xl shadow-black/40">
+            <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Tu premio activo</p>
+            <p id="gift-prize-name" class="text-sm font-extrabold text-brand-accent"></p>
+            <p id="gift-prize-detail" class="text-[11px] text-gray-400 mt-1 mb-3 leading-relaxed"></p>
+            <a href="#" id="gift-wa-btn"
+                class="wa-link flex items-center justify-center gap-1.5 bg-brand-accent hover:bg-brand-accent-hover text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L0 24l6.341-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-4.964-1.344l-.356-.211-3.765.892.942-3.657-.232-.376A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+                </svg>
+                Reclamar premio
+            </a>
+            <p class="text-[10px] text-gray-600 text-center mt-2">Vence en <span id="gift-countdown"
+                    class="font-mono font-bold text-amber-400">--</span></p>
+        </div>
+        <!-- Gift button -->
+        <button id="gift-btn"
+            class="relative w-13 h-13 flex items-center justify-center bg-brand-dark border-2 border-brand-accent rounded-full shadow-lg shadow-brand-accent/25 hover:shadow-brand-accent/50 hover:scale-110 transition-all duration-200"
+            style="width:52px;height:52px;" aria-label="Ver tu premio">
+            <span class="text-2xl select-none">🎁</span>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-accent rounded-full animate-ping opacity-75"></span>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-brand-accent rounded-full"></span>
+        </button>
+    </div>
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
