@@ -153,12 +153,14 @@
 #mobile-menu {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  /* visibility se oculta DESPUÉS del fade, sin snap */
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.5s;
 }
 
 #mobile-menu.open {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.35s cubic-bezier(0.0, 0, 0.2, 1), visibility 0s linear 0s;
 }
 
 /* Staggered link animations */
@@ -166,7 +168,7 @@
 #mobile-menu #mobile-cta {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #mobile-menu.open .mobile-link,
@@ -180,6 +182,23 @@
 /* Header and Footer delays */
 #mobile-menu.open .mb-16 { transition-delay: 0.1s; }
 #mobile-menu.open .border-t { transition-delay: 0.8s; }
+
+/* Closing animation — se agrega junto con la remoción de .open, sin conflictos */
+#mobile-menu.closing .mobile-link,
+#mobile-menu.closing #mobile-cta {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition-delay: calc((6 - var(--i, 1)) * 0.05s);
+}
+
+#mobile-menu.closing .mb-16,
+#mobile-menu.closing .border-t,
+#mobile-menu.closing .opacity-0 {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  transition-delay: 0s !important;
+}
 
 /* --- Hamburger Animation --- */
 #menu-toggle .hamburger-line {
@@ -911,6 +930,53 @@ summary {
 @keyframes tooltipIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Clients Marquee --- */
+.clients-marquee-container {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: clients-scroll 30s linear infinite;
+}
+
+
+@keyframes clients-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.client-logo-item {
+  display: block;
+  flex-shrink: 0;
+}
+
+.client-logo-item img {
+  filter: opacity(0.85);
+  transition: filter 0.4s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.client-logo-item:hover img {
+  filter: opacity(1);
+  transform: scale(1.13);
+}
+
+/* Logo con canvas cuadrado pero diseño horizontal (ej: Gilded Glow) */
+.client-logo-wide img {
+  height: auto;
+  width: 120px;
+}
+
+@media (min-width: 640px) {
+  .client-logo-wide img {
+    width: 150px;
+  }
 }
 
 /* --- Grain Texture Overlay --- */

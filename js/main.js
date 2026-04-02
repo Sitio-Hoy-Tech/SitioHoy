@@ -8,11 +8,14 @@
     // WhatsApp Configuration
     // =============================================
     var WA_NUMBER = '5491112345678'; // <-- CAMBIAR POR TU NÚMERO REAL
-    var WA_MESSAGE = encodeURIComponent('Hola SitioHoy, quiero tener mi página web de $35.000');
-    var WA_URL = 'https://wa.me/' + WA_NUMBER + '?text=' + WA_MESSAGE;
+    var WA_DEFAULT_MESSAGE = 'Hola! Quiero hacer una web con SitioHoy';
+    var WA_DEFAULT_URL = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_DEFAULT_MESSAGE);
 
     document.querySelectorAll('.wa-link').forEach(function (link) {
-        link.href = WA_URL;
+        var customMsg = link.getAttribute('data-wa-msg');
+        link.href = customMsg
+            ? 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(customMsg)
+            : WA_DEFAULT_URL;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
     });
@@ -69,9 +72,13 @@
     var lines = toggleBtn.querySelectorAll('.hamburger-line');
 
     toggleBtn.addEventListener('click', function () {
-        var isOpen = menu.classList.toggle('open');
-        toggleBtn.classList.toggle('open', isOpen);
-        document.body.classList.toggle('overflow-hidden', isOpen);
+        if (menu.classList.contains('open')) {
+            closeMenu();
+        } else {
+            menu.classList.add('open');
+            toggleBtn.classList.add('open');
+            document.body.classList.add('overflow-hidden');
+        }
     });
 
     // Close mobile menu on link click
@@ -89,9 +96,15 @@
     });
 
     function closeMenu() {
+        // Agregar .closing y remover .open al mismo tiempo — sin conflicto de !important
+        menu.classList.add('closing');
         menu.classList.remove('open');
         toggleBtn.classList.remove('open');
-        document.body.classList.remove('overflow-hidden');
+        // Limpiar después de que termina toda la animación
+        setTimeout(function () {
+            menu.classList.remove('closing');
+            document.body.classList.remove('overflow-hidden');
+        }, 560);
     }
 
 
