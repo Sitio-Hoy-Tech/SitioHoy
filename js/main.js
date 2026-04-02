@@ -138,7 +138,7 @@
                     fadeObs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.05 });
+        }, { threshold: 0.15 });
 
         document.querySelectorAll('[class*="reveal-"]').forEach(function (el) {
             fadeObs.observe(el);

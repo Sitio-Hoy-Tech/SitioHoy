@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"C:\\\\Users\\\\tomas\\\\OneDrive\\\\Escritorio\\\\SitioHoy\\\\.claude\\\\worktrees\\\\eager-dijkstra\\\\assets\\\\gilded\"*)"
+    ]
+  }
+}
