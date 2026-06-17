@@ -259,15 +259,34 @@
         });
     }
 
-    // Auto-rotate
-    var carouselTimer = setInterval(function () {
-        goToSlide(currentSlide + 1);
-    }, slideInterval);
+    // Auto-rotate (respects prefers-reduced-motion)
+    var carouselTimer = null;
+    var motionOK = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+    function startAutoRotate() {
+        if (!motionOK || carouselTimer) return;
+        carouselTimer = setInterval(function () { goToSlide(currentSlide + 1); }, slideInterval);
+    }
+    function stopAutoRotate() {
+        clearInterval(carouselTimer);
+        carouselTimer = null;
+    }
+
+    startAutoRotate();
+
+    // Pause on hover / keyboard focus
+    var showcaseEl = document.querySelector('.showcase-container');
+    if (showcaseEl) {
+        showcaseEl.addEventListener('mouseenter', stopAutoRotate);
+        showcaseEl.addEventListener('mouseleave', startAutoRotate);
+        showcaseEl.addEventListener('focusin', stopAutoRotate);
+        showcaseEl.addEventListener('focusout', startAutoRotate);
+    }
 
     // Click on dots to navigate
     showcaseDots.forEach(function (dot, i) {
         dot.addEventListener('click', function () {
-            clearInterval(carouselTimer); // Stop auto-rotate on manual click
+            stopAutoRotate();
             goToSlide(i);
         });
     });

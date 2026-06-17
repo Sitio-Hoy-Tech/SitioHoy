@@ -47,6 +47,9 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Preload hero LCP image (MacBook frame, first slide) -->
+    <link rel="preload" as="image" href="assets/showcase/bar-desktop.webp" type="image/webp">
 </head>
 
 <body class="bg-brand-bg dark:bg-gray-950 text-brand-dark dark:text-gray-100 font-sans antialiased">
@@ -246,7 +249,7 @@
                     <div class="reveal-scale flex flex-col items-center self-end phone-mobile-scale">
                         <!-- Showcase Container -->
                         <div
-                            class="showcase-container relative w-full flex justify-center items-end h-[350px] sm:h-[440px] lg:h-[500px] mb-10">
+                            class="showcase-container relative w-full flex justify-center items-end h-[350px] sm:h-[440px] lg:h-[560px] mb-10">
 
                             <!-- Premium Spotlight -->
                             <div
@@ -263,11 +266,22 @@
                                             <div
                                                 class="absolute inset-0 z-10 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none opacity-40">
                                             </div>
-                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
-                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
-                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
-                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
-                                            <img src="assets/gildedDestop.png" alt="Gilded Glow desktop" class="slide">
+                                            <picture class="slide active">
+                                                <source srcset="assets/showcase/bar-desktop.webp" type="image/webp">
+                                                <img src="assets/showcase/bar-desktop.png" alt="Milan Bar" width="1520" height="950" fetchpriority="high">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/portfolio-desktop.webp" type="image/webp">
+                                                <img src="assets/showcase/portfolio-desktop.png" alt="Matías Ezeordu" width="1520" height="950" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/skincare-desktop.webp" type="image/webp">
+                                                <img src="assets/showcase/skincare-desktop.png" alt="Gilded Glow Skin" width="1520" height="950" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/decants-desktop.webp" type="image/webp">
+                                                <img src="assets/showcase/decants-desktop.png" alt="Nadira Decants" width="1520" height="950" loading="lazy" decoding="async">
+                                            </picture>
                                         </div>
                                     </div>
                                     <div class="macbook-keyboard"></div>
@@ -284,11 +298,22 @@
                                             <div
                                                 class="absolute inset-0 z-10 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none opacity-30">
                                             </div>
-                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
-                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
-                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
-                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
-                                            <img src="assets/gildedTablet.png" alt="Gilded Glow tablet" class="slide">
+                                            <picture class="slide active">
+                                                <source srcset="assets/showcase/bar-tablet.webp" type="image/webp">
+                                                <img src="assets/showcase/bar-tablet.png" alt="Milan Bar" width="624" height="832" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/portfolio-tablet.webp" type="image/webp">
+                                                <img src="assets/showcase/portfolio-tablet.png" alt="Matías Ezeordu" width="624" height="832" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/skincare-tablet.webp" type="image/webp">
+                                                <img src="assets/showcase/skincare-tablet.png" alt="Gilded Glow Skin" width="624" height="832" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/decants-tablet.webp" type="image/webp">
+                                                <img src="assets/showcase/decants-tablet.png" alt="Nadira Decants" width="624" height="832" loading="lazy" decoding="async">
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>
@@ -298,18 +323,28 @@
                             <div id="iphone-frame"
                                 class="device-frame iphone absolute inset-0 flex justify-center items-end">
                                 <div class="phone-frame shadow-2xl">
-                                    <div class="phone-notch"></div>
                                     <div class="phone-screen">
                                         <div class="carousel-inner relative">
                                             <!-- Glossy Reflection -->
                                             <div
                                                 class="absolute inset-0 z-10 bg-gradient-to-tr from-white/15 to-transparent pointer-events-none opacity-40">
                                             </div>
-                                            <img src="assets/slide-bar.png" alt="Web bar" class="slide active">
-                                            <img src="assets/slide-portfolio.png" alt="Web portfolio" class="slide">
-                                            <img src="assets/slide-restaurant.png" alt="Web restaurante" class="slide">
-                                            <img src="assets/slide-services.png" alt="Web servicios" class="slide">
-                                            <img src="assets/gildedCelullar.png" alt="Gilded Glow celular" class="slide">
+                                            <picture class="slide active">
+                                                <source srcset="assets/showcase/bar-mobile.webp" type="image/webp">
+                                                <img src="assets/showcase/bar-mobile.png" alt="Milan Bar" width="600" height="1300" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/portfolio-mobile.webp" type="image/webp">
+                                                <img src="assets/showcase/portfolio-mobile.png" alt="Matías Ezeordu" width="600" height="1300" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/skincare-mobile.webp" type="image/webp">
+                                                <img src="assets/showcase/skincare-mobile.png" alt="Gilded Glow Skin" width="600" height="1300" loading="lazy" decoding="async">
+                                            </picture>
+                                            <picture class="slide">
+                                                <source srcset="assets/showcase/decants-mobile.webp" type="image/webp">
+                                                <img src="assets/showcase/decants-mobile.png" alt="Nadira Decants" width="600" height="1300" loading="lazy" decoding="async">
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>

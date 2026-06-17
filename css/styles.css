@@ -283,26 +283,6 @@ summary {
   }
 }
 
-.phone-notch {
-  position: absolute;
-  top: 14.499px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 20px;
-  background: #0f172a;
-  border-radius: 0 0 14px 14px;
-  z-index: 10;
-}
-
-@media (max-width: 640px) {
-  .phone-notch {
-    top: 10px;
-    height: 16px;
-    width: 65px;
-  }
-}
-
 .phone-screen {
   position: relative;
   width: 100%;
@@ -393,11 +373,10 @@ summary {
 .macbook-body {
   position: relative;
   width: 350px;
-  height: 218px;
   background: linear-gradient(135deg, #1c1c1e 0%, #0a0a0b 100%); /* Space Black */
   border-radius: 12px 12px 0 0;
   padding: 6px;
-  box-shadow: 
+  box-shadow:
     0 40px 80px rgba(0,0,0,0.6),
     inset 0 1px 1px rgba(255,255,255,0.1); /* Top edge metallic shine */
   transition: all 0.5s ease;
@@ -412,21 +391,20 @@ summary {
 }
 
 @media (min-width: 640px) {
-  .macbook-body { width: 520px; height: 325px; padding: 10px; }
+  .macbook-body { width: 520px; padding: 10px; }
 }
 
 @media (min-width: 1024px) {
-  .macbook-body { 
-    width: 820px; 
-    height: 400px; 
-    border-radius: 24px 24px 0 0; 
+  .macbook-body {
+    width: 780px;
+    border-radius: 24px 24px 0 0;
   }
 }
 
 .macbook-screen {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 10;
   background: #000;
   border-radius: 14px;
   overflow: hidden;
@@ -434,25 +412,11 @@ summary {
   box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
 }
 
-/* MacBook Camera/Notch */
-.macbook-screen::before {
+/* MacBook Camera Dot — sits in the bezel above the screen, never overlaps content */
+.macbook-body::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 14px;
-  background: #000;
-  border-radius: 0 0 6px 6px;
-  z-index: 20;
-}
-
-/* MacBook Camera Lens */
-.macbook-screen::after {
-  content: '';
-  position: absolute;
-  top: 4px;
+  top: 3px;
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
@@ -460,7 +424,11 @@ summary {
   background: #1a1a1a;
   border-radius: 50%;
   border: 1px solid #333;
-  z-index: 21;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .macbook-body::before { top: 5px; width: 5px; height: 5px; }
 }
 
 .macbook-keyboard {
@@ -502,11 +470,10 @@ summary {
 .ipad-body {
   position: relative;
   width: 230px;
-  height: 322px;
   background: #0a0a0a;
   border-radius: 28px;
   padding: 12px;
-  box-shadow: 
+  box-shadow:
     0 35px 70px rgba(0,0,0,0.5),
     0 0 0 2px #333, /* Metallic edge */
     inset 0 0 0 1px rgba(255,255,255,0.1);
@@ -518,17 +485,17 @@ summary {
 }
 
 @media (min-width: 640px) {
-  .ipad-body { width: 300px; height: 420px; padding: 14px; }
+  .ipad-body { width: 300px; padding: 14px; }
 }
 
 @media (min-width: 1024px) {
-  .ipad-body { width: 340px; height: 476px; }
+  .ipad-body { width: 340px; }
 }
 
 .ipad-screen {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
   background: #000;
   border-radius: 14px;
   overflow: hidden;
@@ -571,10 +538,17 @@ summary {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top;
+  display: block;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .slide.active {
@@ -603,17 +577,18 @@ summary {
   .phone-frame { width: 220px; }
 }
 
-.phone-notch {
+/* Dynamic Island pill — sits in the bezel above the screen */
+.phone-frame::after {
+  content: '';
   position: absolute;
-  top: 14px;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 30%;
-  height: 18px;
+  width: 28%;
+  height: 6px;
   background: #000;
-  border-radius: 10px; /* Dynamic Island Look */
-  z-index: 20;
-  box-shadow: inset 0 0 4px rgba(255,255,255,0.1);
+  border-radius: 6px;
+  z-index: 10;
 }
 
 /* iPhone Side Buttons */
